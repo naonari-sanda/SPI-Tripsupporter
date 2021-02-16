@@ -17,16 +17,26 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+Route::group(['middleware' => 'api'], function () {
 
-Route::get('/', 'CountryController@index');
+    // メイン画面
+    Route::get('/', 'CountryController@index');
+    //国詳細ページ移動
+    Route::get('/detail/{id}', 'CountryController@detail');
+    //ユーザー一覧
+    Route::get('/user', 'UserController@list');
+
+    //ユーザーページ一覧
+    Route::get('/user/{id}', 'UserController@index');
 
 
-//お気に入り追加
-Route::post('/{id}/like', 'LikesController@like')->name('like');
-Route::post('/{id}/unlike', 'LikesController@unlike')->name('unlike');
+    //お気に入り追加
+    Route::post('/{id}/like', 'LikesController@like')->name('like');
+    Route::post('/{id}/unlike', 'LikesController@unlike')->name('unlike');
 
-//ランキング
-Route::get('/area', 'CountryController@area');
-Route::get('/population', 'CountryController@population');
-Route::get('/gdp', 'CountryController@gdp');
-Route::get('/happiness', 'CountryController@happiness');
+    //ランキング
+    Route::get('/area', 'CountryController@area');
+    Route::get('/population', 'CountryController@population');
+    Route::get('/gdp', 'CountryController@gdp');
+    Route::get('/happiness', 'CountryController@happiness');
+});

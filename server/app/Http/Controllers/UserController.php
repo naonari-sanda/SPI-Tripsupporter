@@ -14,17 +14,13 @@ class UserController extends Controller
     //ユーザーページ表示
     public function index(int $id)
     {
-        $user = User::findOrFail($id);
-
-        return view('pages.user', compact('user'));
+        return User::findOrFail($id);
     }
 
     //ユーザー一覧表示
     public function list()
     {
-        $users = User::all();
-
-        return view('pages.user_list', compact('users'));
+        return User::all();
     }
 
     //プロフィール情報追加

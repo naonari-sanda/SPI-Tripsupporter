@@ -27,9 +27,11 @@
           <!-- Authentication Links -->
           <div class="d-flex" v-if="auth.length === 0">
             <li class="nav-item">
-              <a class="nav-link">
-                <i class="fas fa-users mr-1"></i>ユーザー一覧
-              </a>
+              <router-link :to="{ name: 'users' }">
+                <a class="nav-link">
+                  <i class="fas fa-users mr-1"></i>ユーザー一覧
+                </a>
+              </router-link>
             </li>
             <li class="nav-item">
               <router-link :to="{ name: 'ranking' }">

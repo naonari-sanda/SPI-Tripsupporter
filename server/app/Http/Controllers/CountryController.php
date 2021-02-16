@@ -61,13 +61,11 @@ class CountryController extends Controller
 
 
     //国詳細ページ
-    public function detail(int $id, Review $review)
+    public function detail(int $id)
     {
-        $user_id = Auth::id();
-        $country = Country::findOrFail($id);
-        $user = User::where('id', $user_id)->first();
+        $country = Country::find($id);
 
-        return view('pages.detail', ['id' => $country->id], compact('country'));
+        return $country;
     }
 
     //国検索

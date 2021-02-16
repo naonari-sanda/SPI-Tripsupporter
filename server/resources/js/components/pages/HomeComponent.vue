@@ -170,10 +170,14 @@
                 ></star-rating>
                 <p class="custom-text d-flex align-items-center mb-0 ml-1">1</p>
               </div>
-              <p>{{ country.reviews }}</p>
+              <p></p>
               <p class="card-text mb-2">{{ country.detail | truncate }}</p>
               <div class="d-flex">
-                <a class="btn btn-primary">詳細はこちら</a>
+                <router-link
+                  :to="{ name: 'detail', params: { countryId: country.id } }"
+                >
+                  <a class="btn btn-primary">詳細はこちら</a>
+                </router-link>
               </div>
             </div>
           </div>
@@ -224,8 +228,6 @@ export default {
   },
   mounted() {
     this.getData();
-    var arr = this.data.countries.reviews;
-    console.log(arr);
   },
 };
 </script>
