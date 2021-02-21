@@ -140,7 +140,6 @@
         <hr class="featurette-divider" style="margin: 3rem 0" />
       </div>
       <h3 class="text-center mb-5">検索結果</h3>
-      <p></p>
 
       <div class="row pt-5">
         <div

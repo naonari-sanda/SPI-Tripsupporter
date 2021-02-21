@@ -25,21 +25,22 @@
         <!-- Right Side Of Navbar -->
         <ul class="navbar-nav ml-auto">
           <!-- Authentication Links -->
+
+          <li class="nav-item">
+            <router-link :to="{ name: 'users' }">
+              <a class="nav-link">
+                <i class="fas fa-users mr-1"></i>ユーザー一覧
+              </a>
+            </router-link>
+          </li>
+          <li class="nav-item">
+            <router-link :to="{ name: 'ranking' }">
+              <a class="nav-link"
+                ><i class="fas fa-chart-line mr-1"></i>ランキング</a
+              ></router-link
+            >
+          </li>
           <div class="d-flex" v-if="auth.length === 0">
-            <li class="nav-item">
-              <router-link :to="{ name: 'users' }">
-                <a class="nav-link">
-                  <i class="fas fa-users mr-1"></i>ユーザー一覧
-                </a>
-              </router-link>
-            </li>
-            <li class="nav-item">
-              <router-link :to="{ name: 'ranking' }">
-                <a class="nav-link"
-                  ><i class="fas fa-chart-line mr-1"></i>ランキング</a
-                ></router-link
-              >
-            </li>
             <li class="nav-item">
               <router-link :to="{ name: 'login' }">
                 <a class="nav-link">ログイン</a>
@@ -70,12 +71,9 @@
               aria-labelledby="navbarDropdown"
             >
               <a class="dropdown-item"> ログアウト </a>
-              <router-link :to="{ name: '', params: { userId: auth.id } }">
-                <a class="dropdown-item"> カートを見る </a>
+              <router-link :to="{ name: 'user', params: { userId: auth.id } }">
+                <a class="dropdown-item">マイページ</a>
               </router-link>
-              <router-link :to="{ name: '' }"
-                ><a class="dropdown-item"> アカウント情報 </a></router-link
-              >
             </div>
           </li>
         </ul>

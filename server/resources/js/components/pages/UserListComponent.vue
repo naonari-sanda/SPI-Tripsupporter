@@ -1,7 +1,61 @@
 <template>
   <div>
-    <h1>リスト</h1>
-    <P>{{ list }}</P>
+    <section class="jumbotron text-center d-flex align-items-center visual">
+      <div class="bg">
+        <img
+          class="card-img-top country_img"
+          src="https://tripsupporter.s3-ap-northeast-1.amazonaws.com/user.jpg"
+          alt="Card image cap"
+        />
+        <div class="container text">
+          <h1 class="jumbotron-heading text-light mb-0 font-weight-bold">
+            ユーザー一覧
+          </h1>
+          <p class="lead text-light">Find your favorite user</p>
+
+          <a type="button" class="btn btn-primary"
+            >お気に入りの国をさがそう！</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <div class="container mypage">
+      <article class="user">
+        <table class="table table-hover">
+          <thead class="">
+            <tr>
+              <th scope="col">ユーザー</th>
+              <th scope="col">性別</th>
+              <th scope="col">年齢</th>
+              <th scope="col">詳細</th>
+            </tr>
+          </thead>
+          <tbody v-for="(user, index) in data" :key="index">
+            <td v-if="user.acount"></td>
+
+            <td>
+              <div v-if="user.acount">
+                <td>{{ user.acount.gender }}</td>
+              </div>
+              <div v-else>
+                <td>{{ user.acount.gender }}</td>
+              </div>
+            </td>
+            <td>
+              <div v-if="user.acount">
+                <td>{{ user.acount.age }}</td>
+              </div>
+            </td>
+            <td>
+              <router-link :to="{ name: 'user', params: { userId: user.id } }">
+                <a class="btn btn-primary">詳細</a>
+              </router-link>
+            </td>
+          </tbody>
+        </table>
+      </article>
+    </div>
   </div>
 </template>
 
@@ -9,7 +63,7 @@
 export default {
   data() {
     return {
-      list: {},
+      data: {},
     };
   },
   props: {
@@ -22,7 +76,7 @@ export default {
       axios
         .get("/api/user")
         .then((res) => {
-          this.list = res.data;
+          this.data = res.data;
         })
         .catch((res) => {
           console.log(error.response);

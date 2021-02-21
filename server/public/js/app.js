@@ -1999,8 +1999,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     auth: {
@@ -2027,6 +2025,62 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2039,6 +2093,18 @@ __webpack_require__.r(__webpack_exports__);
     },
     auth: {
       type: Object | String
+    }
+  },
+  filters: {
+    truncate: function truncate(value) {
+      var length = 100;
+      var ommision = "...";
+
+      if (value.length <= length) {
+        return value;
+      }
+
+      return value.substring(0, length) + ommision;
     }
   },
   methods: {
@@ -2225,7 +2291,6 @@ Object(vee_validate__WEBPACK_IMPORTED_MODULE_1__["extend"])("email", _objectSpre
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue_star_rating__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-star-rating */ "./node_modules/vue-star-rating/dist/VueStarRating.common.js");
 /* harmony import */ var vue_star_rating__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue_star_rating__WEBPACK_IMPORTED_MODULE_0__);
-//
 //
 //
 //
@@ -3158,10 +3223,67 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      user: {}
+      data: {}
     };
   },
   props: {
@@ -3177,7 +3299,7 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       axios.get("/api/user/" + this.userId).then(function (res) {
-        _this.user = res.data;
+        _this.data = res.data;
       });
     }
   },
@@ -3204,10 +3326,64 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      list: {}
+      data: {}
     };
   },
   props: {
@@ -3220,7 +3396,7 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       axios.get("/api/user").then(function (res) {
-        _this.list = res.data;
+        _this.data = res.data;
       })["catch"](function (res) {
         console.log(error.response);
         alert("表示できません");
@@ -45360,46 +45536,36 @@ var render = function() {
               _c("ul", { staticClass: "navbar-nav mr-auto" }),
               _vm._v(" "),
               _c("ul", { staticClass: "navbar-nav ml-auto" }, [
+                _c(
+                  "li",
+                  { staticClass: "nav-item" },
+                  [
+                    _c("router-link", { attrs: { to: { name: "users" } } }, [
+                      _c("a", { staticClass: "nav-link" }, [
+                        _c("i", { staticClass: "fas fa-users mr-1" }),
+                        _vm._v("ユーザー一覧\n            ")
+                      ])
+                    ])
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c(
+                  "li",
+                  { staticClass: "nav-item" },
+                  [
+                    _c("router-link", { attrs: { to: { name: "ranking" } } }, [
+                      _c("a", { staticClass: "nav-link" }, [
+                        _c("i", { staticClass: "fas fa-chart-line mr-1" }),
+                        _vm._v("ランキング")
+                      ])
+                    ])
+                  ],
+                  1
+                ),
+                _vm._v(" "),
                 _vm.auth.length === 0
                   ? _c("div", { staticClass: "d-flex" }, [
-                      _c(
-                        "li",
-                        { staticClass: "nav-item" },
-                        [
-                          _c(
-                            "router-link",
-                            { attrs: { to: { name: "users" } } },
-                            [
-                              _c("a", { staticClass: "nav-link" }, [
-                                _c("i", { staticClass: "fas fa-users mr-1" }),
-                                _vm._v("ユーザー一覧\n              ")
-                              ])
-                            ]
-                          )
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "li",
-                        { staticClass: "nav-item" },
-                        [
-                          _c(
-                            "router-link",
-                            { attrs: { to: { name: "ranking" } } },
-                            [
-                              _c("a", { staticClass: "nav-link" }, [
-                                _c("i", {
-                                  staticClass: "fas fa-chart-line mr-1"
-                                }),
-                                _vm._v("ランキング")
-                              ])
-                            ]
-                          )
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
                       _c(
                         "li",
                         { staticClass: "nav-item" },
@@ -45473,23 +45639,17 @@ var render = function() {
                             {
                               attrs: {
                                 to: {
-                                  name: "",
+                                  name: "user",
                                   params: { userId: _vm.auth.id }
                                 }
                               }
                             },
                             [
                               _c("a", { staticClass: "dropdown-item" }, [
-                                _vm._v(" カートを見る ")
+                                _vm._v("マイページ")
                               ])
                             ]
-                          ),
-                          _vm._v(" "),
-                          _c("router-link", { attrs: { to: { name: "" } } }, [
-                            _c("a", { staticClass: "dropdown-item" }, [
-                              _vm._v(" アカウント情報 ")
-                            ])
-                          ])
+                          )
                         ],
                         1
                       )
@@ -45546,11 +45706,141 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("h1", [_vm._v("国詳細")]),
-    _vm._v(" "),
-    _c("p", [_vm._v(_vm._s(_vm.data))])
-  ])
+  return _c(
+    "div",
+    [
+      _c(
+        "section",
+        {
+          staticClass: "jumbotron text-center d-flex align-items-center visual"
+        },
+        [
+          _c("div", { staticClass: "bg" }, [
+            _c("img", {
+              staticClass: "card-img-top country_img",
+              attrs: { src: _vm.data.imgpath, alt: "Card image cap" }
+            }),
+            _vm._v(" "),
+            _c("div", { staticClass: "container text" }, [
+              _c(
+                "h1",
+                {
+                  staticClass:
+                    "jumbotron-heading text-light mb-3 font-weight-bold"
+                },
+                [_vm._v("\n          " + _vm._s(_vm.data.name) + "\n        ")]
+              ),
+              _vm._v(" "),
+              _c("h6", { staticClass: "text-light mb-3" }, [
+                _vm._v(_vm._s(_vm._f("truncate")(_vm.data.detail)))
+              ]),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-primary",
+                  attrs: {
+                    type: "button",
+                    "data-toggle": "modal",
+                    "data-target": "#guestModal"
+                  }
+                },
+                [_vm._v("\n          レビューを投稿\n        ")]
+              )
+            ])
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c("div", { staticClass: "container detail" }, [
+        _c(
+          "ul",
+          { staticClass: "nav d-flex justify-content-around nav nav-tabs" },
+          [
+            _c(
+              "li",
+              {
+                class: { active: _vm.isActive === 1 },
+                on: {
+                  click: function($event) {
+                    return _vm.tabChange(1)
+                  }
+                }
+              },
+              [_vm._v("\n        プロフィール\n      ")]
+            ),
+            _vm._v(" "),
+            _c(
+              "li",
+              {
+                class: { active: _vm.isActive === 2 },
+                on: {
+                  click: function($event) {
+                    return _vm.tabChange(2)
+                  }
+                }
+              },
+              [_vm._v("\n        レビュー\n      ")]
+            ),
+            _vm._v(" "),
+            _c(
+              "li",
+              {
+                class: { active: _vm.isActive === 3 },
+                on: {
+                  click: function($event) {
+                    return _vm.tabChange(3)
+                  }
+                }
+              },
+              [_vm._v("\n        いいね\n      ")]
+            ),
+            _vm._v(" "),
+            _c(
+              "li",
+              {
+                class: { active: _vm.isActive === 4 },
+                on: {
+                  click: function($event) {
+                    return _vm.tabChange(4)
+                  }
+                }
+              },
+              [_vm._v("\n        フォト\n      ")]
+            )
+          ]
+        ),
+        _vm._v(" "),
+        _vm.isActive === 1
+          ? _c("article", { staticClass: "profile" })
+          : _vm.isActive === 2
+          ? _c("article", { staticClass: "review" })
+          : _vm.isActive === 3
+          ? _c("article", { staticClass: "favorite" })
+          : _vm.isActive === 4
+          ? _c("article", { staticClass: "phots" })
+          : _vm._e()
+      ]),
+      _vm._v(" "),
+      _c("review-create-component", {
+        directives: [
+          {
+            name: "show",
+            rawName: "v-show",
+            value: _vm.reviewModal,
+            expression: "reviewModal"
+          }
+        ],
+        attrs: {
+          "country-id": _vm.data.id,
+          "country-name": _vm.data.name,
+          "user-id": _vm.auth.id
+        },
+        on: { "review-child": _vm.closeReview }
+      })
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -45818,8 +46108,6 @@ var render = function() {
         : _vm._e(),
       _vm._v(" "),
       _c("h3", { staticClass: "text-center mb-5" }, [_vm._v("検索結果")]),
-      _vm._v(" "),
-      _c("p"),
       _vm._v(" "),
       _c(
         "div",
@@ -47340,9 +47628,156 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("h1", [_vm._v("ユーザー")]),
+    _c(
+      "section",
+      { staticClass: "jumbotron text-center d-flex align-items-center visual" },
+      [
+        _c("div", { staticClass: "bg" }, [
+          _c("img", {
+            staticClass: "card-img-top country_img",
+            attrs: {
+              src:
+                "https://tripsupporter.s3-ap-northeast-1.amazonaws.com/user.jpg",
+              alt: "Card image cap"
+            }
+          }),
+          _vm._v(" "),
+          _c("div", { staticClass: "container text" }, [
+            _c("div", { staticClass: "mb-0" }, [
+              _vm.auth
+                ? _c("div", [
+                    _c(
+                      "h1",
+                      {
+                        staticClass:
+                          "jumbotron-heading text-light mb-0 font-weight-bold"
+                      },
+                      [_vm._v("\n              マイページ\n            ")]
+                    )
+                  ])
+                : _c("div", [
+                    _c(
+                      "h1",
+                      {
+                        staticClass:
+                          "jumbotron-heading text-light mb-0 font-weight-bold"
+                      },
+                      [
+                        _vm._v(
+                          "\n              " +
+                            _vm._s(_vm.data.name) +
+                            "さんのページ\n            "
+                        )
+                      ]
+                    )
+                  ])
+            ]),
+            _vm._v(" "),
+            _c("p", { staticClass: "lead text-light" }, [
+              _vm._v("Find your favorite user")
+            ]),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-danger",
+                attrs: { type: "button" },
+                on: { click: _vm.showProfile }
+              },
+              [_vm._v("\n          プロフィールを追加する\n        ")]
+            )
+          ])
+        ])
+      ]
+    ),
     _vm._v(" "),
-    _c("p", [_vm._v(_vm._s(_vm.user))])
+    _c(
+      "div",
+      { staticClass: "container mypage" },
+      [
+        _c(
+          "ul",
+          { staticClass: "nav d-flex justify-content-around nav nav-tabs" },
+          [
+            _c(
+              "li",
+              {
+                class: { active: _vm.isActive === 1 },
+                on: {
+                  click: function($event) {
+                    return _vm.tabChange(1)
+                  }
+                }
+              },
+              [_vm._v("\n        プロフィール\n      ")]
+            ),
+            _vm._v(" "),
+            _c(
+              "li",
+              {
+                class: { active: _vm.isActive === 2 },
+                on: {
+                  click: function($event) {
+                    return _vm.tabChange(2)
+                  }
+                }
+              },
+              [_vm._v("\n        レビュー\n      ")]
+            ),
+            _vm._v(" "),
+            _c(
+              "li",
+              {
+                class: { active: _vm.isActive === 3 },
+                on: {
+                  click: function($event) {
+                    return _vm.tabChange(3)
+                  }
+                }
+              },
+              [_vm._v("\n        いいね\n      ")]
+            ),
+            _vm._v(" "),
+            _c(
+              "li",
+              {
+                class: { active: _vm.isActive === 4 },
+                on: {
+                  click: function($event) {
+                    return _vm.tabChange(4)
+                  }
+                }
+              },
+              [_vm._v("\n        フォト\n      ")]
+            )
+          ]
+        ),
+        _vm._v(" "),
+        _vm.isActive === 1
+          ? _c("article", { staticClass: "profile" })
+          : _vm.isActive === 2
+          ? _c("article", { staticClass: "review" })
+          : _vm.isActive === 3
+          ? _c("article", { staticClass: "favorite" })
+          : _vm.isActive === 4
+          ? _c("article", { staticClass: "phots" })
+          : _vm._e(),
+        _vm._v(" "),
+        _c("acount-component", {
+          directives: [
+            {
+              name: "show",
+              rawName: "v-show",
+              value: _vm.profileModal,
+              expression: "profileModal"
+            }
+          ],
+          attrs: { "user-id": _vm.auth.id },
+          on: { "profile-child": _vm.closeProfile }
+        })
+      ],
+      1
+    )
   ])
 }
 var staticRenderFns = []
@@ -47367,17 +47802,125 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [
-      _c("h1", [_vm._v("リスト")]),
-      _vm._v(" "),
-      _c("P", [_vm._v(_vm._s(_vm.list))])
-    ],
-    1
-  )
+  return _c("div", [
+    _vm._m(0),
+    _vm._v(" "),
+    _c("div", { staticClass: "container mypage" }, [
+      _c("article", { staticClass: "user" }, [
+        _c(
+          "table",
+          { staticClass: "table table-hover" },
+          [
+            _vm._m(1),
+            _vm._v(" "),
+            _vm._l(_vm.data, function(user, index) {
+              return _c("tbody", { key: index }, [
+                user.acount ? _c("td") : _vm._e(),
+                _vm._v(" "),
+                _c("td", [
+                  user.acount
+                    ? _c("div", [
+                        _c("td", [_vm._v(_vm._s(user.acount.gender))])
+                      ])
+                    : _c("div", [
+                        _c("td", [_vm._v(_vm._s(user.acount.gender))])
+                      ])
+                ]),
+                _vm._v(" "),
+                _c("td", [
+                  user.acount
+                    ? _c("div", [_c("td", [_vm._v(_vm._s(user.acount.age))])])
+                    : _vm._e()
+                ]),
+                _vm._v(" "),
+                _c(
+                  "td",
+                  [
+                    _c(
+                      "router-link",
+                      {
+                        attrs: {
+                          to: { name: "user", params: { userId: user.id } }
+                        }
+                      },
+                      [
+                        _c("a", { staticClass: "btn btn-primary" }, [
+                          _vm._v("詳細")
+                        ])
+                      ]
+                    )
+                  ],
+                  1
+                )
+              ])
+            })
+          ],
+          2
+        )
+      ])
+    ])
+  ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "section",
+      { staticClass: "jumbotron text-center d-flex align-items-center visual" },
+      [
+        _c("div", { staticClass: "bg" }, [
+          _c("img", {
+            staticClass: "card-img-top country_img",
+            attrs: {
+              src:
+                "https://tripsupporter.s3-ap-northeast-1.amazonaws.com/user.jpg",
+              alt: "Card image cap"
+            }
+          }),
+          _vm._v(" "),
+          _c("div", { staticClass: "container text" }, [
+            _c(
+              "h1",
+              {
+                staticClass:
+                  "jumbotron-heading text-light mb-0 font-weight-bold"
+              },
+              [_vm._v("\n          ユーザー一覧\n        ")]
+            ),
+            _vm._v(" "),
+            _c("p", { staticClass: "lead text-light" }, [
+              _vm._v("Find your favorite user")
+            ]),
+            _vm._v(" "),
+            _c(
+              "a",
+              { staticClass: "btn btn-primary", attrs: { type: "button" } },
+              [_vm._v("お気に入りの国をさがそう！")]
+            )
+          ])
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", {}, [
+      _c("tr", [
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("ユーザー")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("性別")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("年齢")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("詳細")])
+      ])
+    ])
+  }
+]
 render._withStripped = true
 
 

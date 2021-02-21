@@ -20,7 +20,8 @@ class UserController extends Controller
     //ユーザー一覧表示
     public function list()
     {
-        return User::all();
+
+        return User::with('acount')->get();
     }
 
     //プロフィール情報追加
