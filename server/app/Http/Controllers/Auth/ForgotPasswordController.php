@@ -28,6 +28,6 @@ class ForgotPasswordController extends Controller
             $request->only('email')
         );
         session()->flash('info_message', 'パスワード再設定メールを送信しました');
-        return redirect()->route('main');
+        return redirect('/');
     }
 }

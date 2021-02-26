@@ -1999,10 +1999,28 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      csrf: document.querySelector('meta[name="csrf-token"]').getAttribute("content")
+    };
+  },
   props: {
     auth: {
       type: Object | Array
+    }
+  },
+  methods: {
+    logout: function logout() {
+      document.querySelector("#logout-form").submit();
     }
   }
 });
@@ -45630,9 +45648,32 @@ var render = function() {
                           attrs: { "aria-labelledby": "navbarDropdown" }
                         },
                         [
-                          _c("a", { staticClass: "dropdown-item" }, [
-                            _vm._v(" ログアウト ")
-                          ]),
+                          _c(
+                            "a",
+                            {
+                              staticClass: "dropdown-item",
+                              on: { click: _vm.logout }
+                            },
+                            [_vm._v(" ログアウト ")]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "form",
+                            {
+                              attrs: {
+                                action: "/logout",
+                                id: "logout-form",
+                                method: "POST",
+                                styele: "display: none"
+                              }
+                            },
+                            [
+                              _c("input", {
+                                attrs: { type: "hidden", name: "_token" },
+                                domProps: { value: _vm.csrf }
+                              })
+                            ]
+                          ),
                           _vm._v(" "),
                           _c(
                             "router-link",

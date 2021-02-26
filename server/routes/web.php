@@ -16,6 +16,8 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/vue', function () {
 
 // });
+Auth::routes();
+
 Route::get('/{any}', function () {
     return view('layouts.vue_app');
 })->where('any', '.*');
@@ -59,6 +61,3 @@ Route::get('/{any}', function () {
 //     //画像削除
 //     Route::post('/delete/img', 'ReviewController@deleteImg')->name('delete.img');
 // });
-
-
-Auth::routes();

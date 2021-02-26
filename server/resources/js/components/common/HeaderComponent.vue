@@ -70,7 +70,15 @@
               class="dropdown-menu dropdown-menu-right"
               aria-labelledby="navbarDropdown"
             >
-              <a class="dropdown-item"> ログアウト </a>
+              <a class="dropdown-item" @click="logout"> ログアウト </a>
+              <form
+                action="/logout"
+                id="logout-form"
+                method="POST"
+                styele="display: none"
+              >
+                <input type="hidden" name="_token" :value="csrf" />
+              </form>
               <router-link :to="{ name: 'user', params: { userId: auth.id } }">
                 <a class="dropdown-item">マイページ</a>
               </router-link>
@@ -84,9 +92,22 @@
 
 <script>
 export default {
+  data() {
+    return {
+      csrf: document
+        .querySelector('meta[name="csrf-token"]')
+        .getAttribute("content"),
+    };
+  },
+
   props: {
     auth: {
       type: Object | Array,
+    },
+  },
+  methods: {
+    logout() {
+      document.querySelector("#logout-form").submit();
     },
   },
 };
