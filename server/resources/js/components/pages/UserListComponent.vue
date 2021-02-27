@@ -89,10 +89,13 @@ export default {
   },
   methods: {
     getUsers() {
+      const loader = this.$loading.show();
+
       axios
         .get("/api/user")
         .then((res) => {
           this.data = res.data;
+          loader.hide();
         })
         .catch((res) => {
           console.log(error.response);

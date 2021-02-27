@@ -1,6 +1,5 @@
 require('./bootstrap');
 require('./script');
-require('./vue');
 
 
 window.Vue = require('vue');
@@ -10,26 +9,15 @@ import axios from 'axios'
 import router from './router.js'
 import StarRating from "vue-star-rating";
 import Notifications from 'vue-notification'
-import RankingComponent from './components/pages/RankingComponent'
-import LoginComponent from './components/pages/LoginComponent'
-import RegisterComponent from './components/pages/RegisterComponent'
-import ForgetPassComponent from './components/pages/ForgetPassComponent'
-
-import ImgUploadComponent from './components/parts/ImgUploadComponent'
-import ReviewCreateComponent from './components/parts/ReviewCreateComponent'
-import ReviewEditComponent from './components/parts/ReviewEditComponent'
-import AcountComponent from './components/parts/AcountComponent'
-import AcountEditComponent from './components/parts/AcountEditComponent'
-import LikeComponent from './components/parts/LikeComponent'
-
+import Loading from 'vue-loading-overlay';
+import 'vue-loading-overlay/dist/vue-loading.css';
 
 import MainComponent from './components/pages/MainComponent'
 
 
 Vue.prototype.$http = axios;
-
 Vue.use(Notifications);
-
+Vue.use(Loading);
 
 const app = new Vue({
     el: '#app',
@@ -48,17 +36,7 @@ const app = new Vue({
         reviewDetail: ""
     },
     components: {
-        LikeComponent,
         StarRating,
-        LoginComponent,
-        RegisterComponent,
-        ForgetPassComponent,
-        ReviewCreateComponent,
-        ReviewEditComponent,
-        AcountComponent,
-        AcountEditComponent,
-        RankingComponent,
-        ImgUploadComponent,
         MainComponent
     },
     props: {
