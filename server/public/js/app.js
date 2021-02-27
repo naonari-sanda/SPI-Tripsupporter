@@ -3398,6 +3398,22 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -47856,43 +47872,78 @@ var render = function() {
             _vm._v(" "),
             _vm._l(_vm.data, function(user, index) {
               return _c("tbody", { key: index }, [
-                user.acount ? _c("td") : _vm._e(),
-                _vm._v(" "),
-                _c("td", [
+                _c("tr", [
+                  _c(
+                    "td",
+                    [
+                      _c(
+                        "router-link",
+                        {
+                          attrs: {
+                            to: { name: "user", params: { userId: user.id } }
+                          }
+                        },
+                        [
+                          _c(
+                            "a",
+                            {
+                              staticClass:
+                                "text-dark d-flex align-items-center font-weight-bold"
+                            },
+                            [
+                              user.acount
+                                ? _c("img", {
+                                    staticClass: "cycle img-thumbnail mr-2",
+                                    attrs: {
+                                      src: user.acount.icon,
+                                      alt: "ユーザーアイコン"
+                                    }
+                                  })
+                                : _c("img", {
+                                    staticClass: "cycle img-thumbnail mr-2",
+                                    attrs: {
+                                      src:
+                                        "https://tripsupporter.s3-ap-northeast-1.amazonaws.com/none.png",
+                                      alt: "アイコン"
+                                    }
+                                  }),
+                              _vm._v("\n                  " + _vm._s(user.name))
+                            ]
+                          )
+                        ]
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
                   user.acount
-                    ? _c("div", [
-                        _c("td", [_vm._v(_vm._s(user.acount.gender))])
-                      ])
-                    : _c("div", [
-                        _c("td", [_vm._v(_vm._s(user.acount.gender))])
-                      ])
-                ]),
-                _vm._v(" "),
-                _c("td", [
+                    ? _c("td", [_vm._v(_vm._s(user.acount.gender))])
+                    : _c("td", [_vm._v("回答がありません")]),
+                  _vm._v(" "),
                   user.acount
-                    ? _c("div", [_c("td", [_vm._v(_vm._s(user.acount.age))])])
-                    : _vm._e()
-                ]),
-                _vm._v(" "),
-                _c(
-                  "td",
-                  [
-                    _c(
-                      "router-link",
-                      {
-                        attrs: {
-                          to: { name: "user", params: { userId: user.id } }
-                        }
-                      },
-                      [
-                        _c("a", { staticClass: "btn btn-primary" }, [
-                          _vm._v("詳細")
-                        ])
-                      ]
-                    )
-                  ],
-                  1
-                )
+                    ? _c("td", [_vm._v(_vm._s(user.acount.age))])
+                    : _c("td", [_vm._v("回答がありません")]),
+                  _vm._v(" "),
+                  _c(
+                    "td",
+                    [
+                      _c(
+                        "router-link",
+                        {
+                          attrs: {
+                            to: { name: "user", params: { userId: user.id } }
+                          }
+                        },
+                        [
+                          _c("a", { staticClass: "btn btn-primary" }, [
+                            _vm._v("詳細")
+                          ])
+                        ]
+                      )
+                    ],
+                    1
+                  )
+                ])
               ])
             })
           ],

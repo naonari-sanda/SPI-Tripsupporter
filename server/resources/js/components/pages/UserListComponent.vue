@@ -32,26 +32,42 @@
             </tr>
           </thead>
           <tbody v-for="(user, index) in data" :key="index">
-            <td v-if="user.acount"></td>
-
-            <td>
-              <div v-if="user.acount">
-                <td>{{ user.acount.gender }}</td>
-              </div>
-              <div v-else>
-                <td>{{ user.acount.gender }}</td>
-              </div>
-            </td>
-            <td>
-              <div v-if="user.acount">
-                <td>{{ user.acount.age }}</td>
-              </div>
-            </td>
-            <td>
-              <router-link :to="{ name: 'user', params: { userId: user.id } }">
-                <a class="btn btn-primary">詳細</a>
-              </router-link>
-            </td>
+            <tr>
+              <td>
+                <router-link
+                  :to="{ name: 'user', params: { userId: user.id } }"
+                >
+                  <a
+                    class="text-dark d-flex align-items-center font-weight-bold"
+                  >
+                    <img
+                      v-if="user.acount"
+                      class="cycle img-thumbnail mr-2"
+                      :src="user.acount.icon"
+                      alt="ユーザーアイコン"
+                    />
+                    <img
+                      v-else
+                      class="cycle img-thumbnail mr-2"
+                      src="https://tripsupporter.s3-ap-northeast-1.amazonaws.com/none.png"
+                      alt="アイコン"
+                    />
+                    {{ user.name }}</a
+                  >
+                </router-link>
+              </td>
+              <td v-if="user.acount">{{ user.acount.gender }}</td>
+              <td v-else>回答がありません</td>
+              <td v-if="user.acount">{{ user.acount.age }}</td>
+              <td v-else>回答がありません</td>
+              <td>
+                <router-link
+                  :to="{ name: 'user', params: { userId: user.id } }"
+                >
+                  <a class="btn btn-primary">詳細</a>
+                </router-link>
+              </td>
+            </tr>
           </tbody>
         </table>
       </article>
