@@ -11,8 +11,8 @@
         <main class="">
             <main-component :errors="{{ $errors }}" :auth="{{ Auth::user() ?? '[]' }}" />
         </main>
+        @include('includes.common.modal')
     </div>
-    @include('includes.common.modal')
 
     <script src="https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.js"></script>
     <script src="{{ mix('/js/app.js') }}"></script>

@@ -7,10 +7,14 @@
                 </h4>
             </div>
             <div class="modal-body">
-                <a href="/login" class="link-font">ログイン</a>
+                <router-link :to="{ name: 'login' }">
+                    <a data-dismiss="modal" class="link-font">ログイン</a>
+                </router-link>
             </div>
             <div class="modal-body">
-                <a href="/register" class="denger-link">会員登録</a>
+                <router-link :to="{ name: 'register' }">
+                    <a data-dismiss="modal" class="denger-link">会員登録</a>
+                </router-link>
             </div>
             <div class="modal-body-b">
                 <span data-dismiss="modal">キャンセル</span>

@@ -1,10 +1,14 @@
 <template>
   <div>
-    <header-component :auth="auth" />
+    <header>
+      <header-component :auth="auth" />
+    </header>
     <main>
       <router-view :errors="errors" :auth="auth" />
     </main>
-    <footer-component />
+    <footer>
+      <footer-component />
+    </footer>
   </div>
 </template>
 
