@@ -26,7 +26,12 @@
         <ul class="navbar-nav ml-auto">
           <!-- Authentication Links -->
 
-          <li class="nav-item">
+          <li v-if="auth.length === 0" class="nav-item">
+            <a class="nav-link" data-toggle="modal" data-target="#guestModal">
+              <i class="fas fa-users mr-1"></i>ユーザー一覧
+            </a>
+          </li>
+          <li v-else class="nav-item">
             <router-link :to="{ name: 'users' }">
               <a class="nav-link">
                 <i class="fas fa-users mr-1"></i>ユーザー一覧
