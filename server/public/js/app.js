@@ -2104,10 +2104,206 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      data: {}
+      data: {},
+      isActive: 1
     };
   },
   props: {
@@ -2137,6 +2333,9 @@ __webpack_require__.r(__webpack_exports__);
       axios.get("/api/detail/" + this.countryId).then(function (res) {
         _this.data = res.data;
       });
+    },
+    tabChange: function tabChange(num) {
+      this.isActive = num;
     }
   },
   mounted: function mounted() {
@@ -43377,143 +43576,535 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [
-      _c(
-        "section",
-        {
-          staticClass: "jumbotron text-center d-flex align-items-center visual"
-        },
-        [
-          _c("div", { staticClass: "bg" }, [
-            _c("img", {
-              staticClass: "card-img-top country_img",
-              attrs: { src: _vm.data.imgpath, alt: "Card image cap" }
-            }),
+  return _c("div", [
+    _c(
+      "section",
+      { staticClass: "jumbotron text-center d-flex align-items-center visual" },
+      [
+        _c("div", { staticClass: "bg" }, [
+          _c("img", {
+            staticClass: "card-img-top country_img",
+            attrs: { src: _vm.data.imgpath, alt: "Card image cap" }
+          }),
+          _vm._v(" "),
+          _c("div", { staticClass: "container text" }, [
+            _c(
+              "h1",
+              {
+                staticClass:
+                  "jumbotron-heading text-light mb-3 font-weight-bold"
+              },
+              [_vm._v("\n          " + _vm._s(_vm.data.name) + "\n        ")]
+            ),
             _vm._v(" "),
-            _c("div", { staticClass: "container text" }, [
-              _c(
-                "h1",
-                {
-                  staticClass:
-                    "jumbotron-heading text-light mb-3 font-weight-bold"
-                },
-                [_vm._v("\n          " + _vm._s(_vm.data.name) + "\n        ")]
-              ),
-              _vm._v(" "),
-              _c("h6", { staticClass: "text-light mb-3" }, [
-                _vm._v(_vm._s(_vm._f("truncate")(_vm.data.detail)))
-              ]),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-primary",
-                  attrs: {
-                    type: "button",
-                    "data-toggle": "modal",
-                    "data-target": "#guestModal"
-                  }
-                },
-                [_vm._v("\n          レビューを投稿\n        ")]
-              )
-            ])
+            _c("h6", { staticClass: "text-light mb-3" }, [
+              _vm._v(_vm._s(_vm._f("truncate")(_vm.data.detail)))
+            ]),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-primary",
+                attrs: {
+                  type: "button",
+                  "data-toggle": "modal",
+                  "data-target": "#guestModal"
+                }
+              },
+              [
+                _vm._v(
+                  "\n          レビューを投稿" +
+                    _vm._s(_vm.isActive) +
+                    "\n        "
+                )
+              ]
+            )
           ])
+        ])
+      ]
+    ),
+    _vm._v(" "),
+    _c("div", { staticClass: "container detail" }, [
+      _c(
+        "ul",
+        { staticClass: "nav d-flex justify-content-around nav nav-tabs" },
+        [
+          _c(
+            "li",
+            {
+              class: { active: _vm.isActive === 1 },
+              on: {
+                click: function($event) {
+                  return _vm.tabChange(1)
+                }
+              }
+            },
+            [_vm._v("\n        プロフィール\n      ")]
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            {
+              class: { active: _vm.isActive === 2 },
+              on: {
+                click: function($event) {
+                  return _vm.tabChange(2)
+                }
+              }
+            },
+            [_vm._v("\n        レビュー\n      ")]
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            {
+              class: { active: _vm.isActive === 3 },
+              on: {
+                click: function($event) {
+                  return _vm.tabChange(3)
+                }
+              }
+            },
+            [_vm._v("\n        いいね\n      ")]
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            {
+              class: { active: _vm.isActive === 4 },
+              on: {
+                click: function($event) {
+                  return _vm.tabChange(4)
+                }
+              }
+            },
+            [_vm._v("\n        フォト\n      ")]
+          )
         ]
       ),
       _vm._v(" "),
-      _c("div", { staticClass: "container detail" }, [
-        _c(
-          "ul",
-          { staticClass: "nav d-flex justify-content-around nav nav-tabs" },
-          [
-            _c(
-              "li",
-              {
-                class: { active: _vm.isActive === 1 },
-                on: {
-                  click: function($event) {
-                    return _vm.tabChange(1)
-                  }
-                }
-              },
-              [_vm._v("\n        プロフィール\n      ")]
-            ),
+      _vm.isActive === 1
+        ? _c("article", { staticClass: "profile" }, [
+            _c("div", [
+              _c("h2", [_vm._v("profile")]),
+              _vm._v(" "),
+              _c("table", { staticClass: "table table-striped" }, [
+                _vm._m(0),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("th", [_vm._v("人口")]),
+                  _vm._v(" "),
+                  _c("td", [
+                    _vm._v("約" + _vm._s(_vm.data.population) + "万人")
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("th", [_vm._v("首都")]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(_vm.data.population))])
+                ]),
+                _vm._v(" "),
+                _vm._m(1),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("th", [_vm._v("宗教")]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(_vm.data.population))])
+                ]),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("th", [_vm._v("GDP")]),
+                  _vm._v(" "),
+                  _c("td", [
+                    _vm._v("約" + _vm._s(_vm.data.population) + "万ドル")
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("th", [_vm._v("幸福度")]),
+                  _vm._v(" "),
+                  _c("td", [
+                    _vm._v(
+                      "\n              約" +
+                        _vm._s(_vm.data.population) +
+                        "\n              "
+                    ),
+                    _c(
+                      "a",
+                      {
+                        attrs: {
+                          href:
+                            "https://ja.wikipedia.org/wiki/%E4%B8%96%E7%95%8C%E5%B9%B8%E7%A6%8F%E5%BA%A6%E5%A0%B1%E5%91%8A"
+                        }
+                      },
+                      [_vm._v("世界幸福度報告")]
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _vm._m(2),
+                _vm._v(" "),
+                _vm._m(3)
+              ])
+            ]),
+            _vm._v("\n      '\n    ")
+          ])
+        : _vm.isActive === 2
+        ? _c("article", { staticClass: "review" }, [
+            _c("h2", [_vm._v("Reviews")]),
             _vm._v(" "),
-            _c(
-              "li",
-              {
-                class: { active: _vm.isActive === 2 },
-                on: {
-                  click: function($event) {
-                    return _vm.tabChange(2)
-                  }
-                }
-              },
-              [_vm._v("\n        レビュー\n      ")]
-            ),
+            _c("p", { staticClass: "mb-3 font-weight-bold" }, [
+              _vm._v("件のレビューがありました")
+            ]),
             _vm._v(" "),
-            _c(
-              "li",
-              {
-                class: { active: _vm.isActive === 3 },
-                on: {
-                  click: function($event) {
-                    return _vm.tabChange(3)
-                  }
-                }
-              },
-              [_vm._v("\n        いいね\n      ")]
-            ),
-            _vm._v(" "),
-            _c(
-              "li",
-              {
-                class: { active: _vm.isActive === 4 },
-                on: {
-                  click: function($event) {
-                    return _vm.tabChange(4)
-                  }
-                }
-              },
-              [_vm._v("\n        フォト\n      ")]
-            )
-          ]
-        ),
+            _c("div", { staticClass: "wrapper" }, [
+              _vm._m(4),
+              _vm._v(" "),
+              _vm._m(5),
+              _vm._v(" "),
+              _c("p", { staticClass: "mt-1 ml-1 mb-0" }, [
+                _vm._v("xxxxに投稿しました。")
+              ]),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "star d-flex align-items-center ml-1 mb-2" },
+                [
+                  _c(
+                    "p",
+                    {
+                      staticClass:
+                        "d-flex align-items-center mb-0 mr-1 font-weight-bold"
+                    },
+                    [_vm._v("\n            総合\n          ")]
+                  ),
+                  _vm._v(" "),
+                  _c("star-rating", {
+                    attrs: {
+                      increment: 0.5,
+                      rating: 1,
+                      "read-only": "true",
+                      "show-rating": false,
+                      "star-size": 20,
+                      "active-color": "#ff4742"
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("p", {
+                    staticClass:
+                      "custom-text d-flex align-items-center mb-0 ml-1 mr-1"
+                  }),
+                  _vm._v(" "),
+                  _c(
+                    "a",
+                    {
+                      attrs: {
+                        href: "",
+                        "data-toggle": "collapse",
+                        "data-target": "",
+                        "aria-expand": "false",
+                        "aria-controls": ""
+                      }
+                    },
+                    [_vm._v("評価を詳しく見る")]
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c("div", { staticClass: "collapse", attrs: { id: "review-" } }, [
+                _c(
+                  "div",
+                  { staticClass: "star d-flex align-items-center ml-1 mb-2" },
+                  [
+                    _c(
+                      "p",
+                      { staticClass: "d-flex align-items-center mb-0 mr-1" },
+                      [_vm._v("治安")]
+                    ),
+                    _vm._v(" "),
+                    _c("star-rating", {
+                      attrs: {
+                        increment: 0.5,
+                        rating: 1,
+                        "read-only": true,
+                        "show-rating": false,
+                        "star-size": 20,
+                        "active-color": "#ff4742"
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("p", {
+                      staticClass:
+                        "custom-text d-flex align-items-center mb-0 ml-1 mr-1"
+                    })
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "star d-flex align-items-center ml-1 mb-2" },
+                  [
+                    _c(
+                      "p",
+                      { staticClass: "d-flex align-items-center mb-0 mr-1" },
+                      [_vm._v("費用")]
+                    ),
+                    _vm._v(" "),
+                    _c("star-rating", {
+                      attrs: {
+                        increment: 0.5,
+                        rating: 3,
+                        "read-only": true,
+                        "show-rating": false,
+                        "star-size": 20,
+                        "active-color": "#ff4742"
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("p", {
+                      staticClass:
+                        "custom-text d-flex align-items-center mb-0 ml-1 mr-1"
+                    })
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "star d-flex align-items-center ml-1 mb-2" },
+                  [
+                    _c(
+                      "p",
+                      { staticClass: "d-flex align-items-center mb-0 mr-1" },
+                      [_vm._v("観光")]
+                    ),
+                    _vm._v(" "),
+                    _c("star-rating", {
+                      attrs: {
+                        increment: 0.5,
+                        rating: 2,
+                        "read-only": true,
+                        "show-rating": false,
+                        "star-size": 20,
+                        "active-color": "#ff4742"
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("p", {
+                      staticClass:
+                        "custom-text d-flex align-items-center mb-0 ml-1 mr-1"
+                    })
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "star d-flex align-items-center ml-1 mb-2" },
+                  [
+                    _c(
+                      "p",
+                      { staticClass: "d-flex align-items-center mb-0 mr-1" },
+                      [_vm._v("料理")]
+                    ),
+                    _vm._v(" "),
+                    _c("star-rating", {
+                      attrs: {
+                        increment: 0.5,
+                        rating: 3,
+                        "read-only": true,
+                        "show-rating": false,
+                        "star-size": 20,
+                        "active-color": "#ff4742"
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("p", {
+                      staticClass:
+                        "custom-text d-flex align-items-center mb-0 ml-1 mr-1"
+                    })
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "star d-flex align-items-center ml-1 mb-2" },
+                  [
+                    _c(
+                      "p",
+                      { staticClass: "d-flex align-items-center mb-0 mr-1" },
+                      [_vm._v("楽しさ")]
+                    ),
+                    _vm._v(" "),
+                    _c("star-rating", {
+                      attrs: {
+                        increment: 0.5,
+                        rating: 2,
+                        "read-only": true,
+                        "show-rating": false,
+                        "star-size": 20,
+                        "active-color": "#ff4742"
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("p", {
+                      staticClass:
+                        "custom-text d-flex align-items-center mb-0 ml-1 mr-1"
+                    })
+                  ],
+                  1
+                )
+              ]),
+              _vm._v(" "),
+              _vm._m(6),
+              _vm._v(" "),
+              _vm._m(7),
+              _vm._v(" "),
+              _c("img", {
+                staticClass: "img img-thumbnail",
+                staticStyle: { width: "200px" },
+                attrs: { src: "" }
+              })
+            ])
+          ])
+        : _vm.isActive === 3
+        ? _c("article", { staticClass: "favorite" })
+        : _vm.isActive === 4
+        ? _c("article", { staticClass: "phots" })
+        : _vm._e()
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("tr", [
+      _c("th", [_vm._v("面積")]),
+      _vm._v(" "),
+      _c("td", [_vm._v("約万平方キロメートル")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("tr", [_c("th", [_vm._v("母国語")]), _vm._v(" "), _c("td")])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("tr", [
+      _c("th", [_vm._v("入国制限"), _c("br"), _vm._v("（コロナ）")]),
+      _vm._v(" "),
+      _c("td")
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("tr", [
+      _c("th", [_vm._v("詳細")]),
+      _vm._v(" "),
+      _c("td", [_c("p")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "a",
+      {
+        staticClass:
+          "text-dark d-flex align-items-center font-weight-bold mb-0",
+        attrs: { href: "" }
+      },
+      [
+        _c("img", {
+          staticClass: "cycle img-thumbnail mr-2",
+          attrs: { src: "", alt: "ユーザーアイコン" }
+        }),
         _vm._v(" "),
-        _vm.isActive === 1
-          ? _c("article", { staticClass: "profile" })
-          : _vm.isActive === 2
-          ? _c("article", { staticClass: "review" })
-          : _vm.isActive === 3
-          ? _c("article", { staticClass: "favorite" })
-          : _vm.isActive === 4
-          ? _c("article", { staticClass: "phots" })
-          : _vm._e()
+        _c("img", {
+          staticClass: "cycle img-thumbnail mr-2",
+          attrs: {
+            src:
+              "https://tripsupporter.s3-ap-northeast-1.amazonaws.com/men.png",
+            alt: "男性アイコン"
+          }
+        }),
+        _vm._v(" "),
+        _c("img", {
+          staticClass: "cycle img-thumbnail mr-2",
+          attrs: {
+            src:
+              "https://tripsupporter.s3-ap-northeast-1.amazonaws.com/women.png",
+            alt: "女性アイコン"
+          }
+        }),
+        _vm._v(" "),
+        _c("img", {
+          staticClass: "cycle img-thumbnail mr-2",
+          attrs: {
+            src:
+              "https://tripsupporter.s3-ap-northeast-1.amazonaws.com/none.png",
+            alt: "アイコン"
+          }
+        })
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "a",
+      {
+        staticClass:
+          "text-dark d-flex align-items-center font-weight-bold mb-0",
+        attrs: { "data-toggle": "modal", "data-target": "#guestModal" }
+      },
+      [
+        _c("img", {
+          staticClass: "cycle img-thumbnail mr-2",
+          attrs: { src: "", alt: "ユーザーアイコン" }
+        }),
+        _vm._v("\n          xxxx}\\")
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "fill mb-1" }, [
+      _c("p", { staticClass: "mb-1 font-weight-bold" }, [
+        _vm._v("お気に入り都市")
       ]),
       _vm._v(" "),
-      _c("review-create-component", {
-        directives: [
-          {
-            name: "show",
-            rawName: "v-show",
-            value: _vm.reviewModal,
-            expression: "reviewModal"
-          }
-        ],
-        attrs: {
-          "country-id": _vm.data.id,
-          "country-name": _vm.data.name,
-          "user-id": _vm.auth.id
-        },
-        on: { "review-child": _vm.closeReview }
-      })
-    ],
-    1
-  )
-}
-var staticRenderFns = []
+      _c("p", { staticClass: "text mb-0" })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "fill mb-3" }, [
+      _c("p", { staticClass: "mb-1 font-weight-bold" }, [_vm._v("レビュー")]),
+      _vm._v(" "),
+      _c("p", { staticClass: "text mb-0" })
+    ])
+  }
+]
 render._withStripped = true
 
 

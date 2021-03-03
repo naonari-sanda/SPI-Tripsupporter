@@ -19,25 +19,6 @@ class CountryController extends Controller
 {
 
     //メインページ表示
-    // public function index(Request $request)
-    // {
-
-    //     $countries = Country::paginate(12);
-
-    //     $information = Information::orderBy('created_at', 'desc')->first();
-
-    //     $user_id = Auth::id();
-
-
-    //     $like = Like::where('user_id', $user_id)->first();
-    //     if (!isset($like)) {
-    //         $like['check'] = false;
-    //     } else {
-    //         $like['check'] = true;
-    //     }
-    //     return view('pages.main', compact('countries', 'like', 'information'));
-    // }
-
     public function index(Request $request)
     {
 
@@ -54,7 +35,6 @@ class CountryController extends Controller
         } else {
             $data['check'] = true;
         }
-
 
         return $data;
     }
