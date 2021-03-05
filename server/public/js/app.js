@@ -2041,6 +2041,8 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vue_star_rating__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-star-rating */ "./node_modules/vue-star-rating/dist/VueStarRating.common.js");
+/* harmony import */ var vue_star_rating__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue_star_rating__WEBPACK_IMPORTED_MODULE_0__);
 //
 //
 //
@@ -2299,11 +2301,26 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       data: {},
-      isActive: 1
+      isActive: 1,
+      rating: "0"
     };
   },
   props: {
@@ -2313,6 +2330,9 @@ __webpack_require__.r(__webpack_exports__);
     auth: {
       type: Object | String
     }
+  },
+  components: {
+    StarRating: vue_star_rating__WEBPACK_IMPORTED_MODULE_0___default.a
   },
   filters: {
     truncate: function truncate(value) {
@@ -43784,7 +43804,7 @@ var render = function() {
                     attrs: {
                       increment: 0.5,
                       rating: 1,
-                      "read-only": "true",
+                      "read-only": true,
                       "show-rating": false,
                       "star-size": 20,
                       "active-color": "#ff4742"
@@ -43972,9 +43992,25 @@ var render = function() {
             ])
           ])
         : _vm.isActive === 3
-        ? _c("article", { staticClass: "favorite" })
+        ? _c("article", { staticClass: "favorite" }, [_vm._m(8)])
         : _vm.isActive === 4
-        ? _c("article", { staticClass: "phots" })
+        ? _c("article", { staticClass: "phots" }, [
+            _c("h2", { attrs: { "font-weight-bold": "" } }, [
+              _vm._v("Photo gallery")
+            ]),
+            _vm._v(" "),
+            _vm.auth.length !== 0
+              ? _c(
+                  "a",
+                  {
+                    staticClass: "btn btn-danger mb-2",
+                    attrs: { type: "button" },
+                    on: { click: _vm.showImage }
+                  },
+                  [_vm._v("画像を投稿しよう！")]
+                )
+              : _vm._e()
+          ])
         : _vm._e()
     ])
   ])
@@ -44102,6 +44138,14 @@ var staticRenderFns = [
       _c("p", { staticClass: "mb-1 font-weight-bold" }, [_vm._v("レビュー")]),
       _vm._v(" "),
       _c("p", { staticClass: "text mb-0" })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "d-flex mb-3" }, [
+      _c("h2", { staticClass: "mb-0" }, [_vm._v("favorites")])
     ])
   }
 ]

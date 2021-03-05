@@ -141,7 +141,7 @@
             <star-rating
               v-bind:increment="0.5"
               v-bind:rating="1"
-              read-only="true"
+              v-bind:read-only="true"
               v-bind:show-rating="false"
               v-bind:star-size="20"
               active-color="#ff4742"
@@ -249,19 +249,35 @@
         </div>
       </article>
 
-      <article v-else-if="isActive === 3" class="favorite"></article>
+      <article v-else-if="isActive === 3" class="favorite">
+        <div class="d-flex mb-3">
+          <h2 class="mb-0">favorites</h2>
+        </div>
+      </article>
 
-      <article v-else-if="isActive === 4" class="phots"></article>
+      <article v-else-if="isActive === 4" class="phots">
+        <h2 font-weight-bold>Photo gallery</h2>
+        <a
+          v-if="auth.length !== 0"
+          @click="showImage"
+          type="button"
+          class="btn btn-danger mb-2"
+          >画像を投稿しよう！</a
+        >
+      </article>
     </div>
   </div>
 </template>
 
 <script>
+import StarRating from "vue-star-rating";
+
 export default {
   data() {
     return {
       data: {},
       isActive: 1,
+      rating: "0",
     };
   },
   props: {
@@ -271,6 +287,9 @@ export default {
     auth: {
       type: Object | String,
     },
+  },
+  components: {
+    StarRating,
   },
   filters: {
     truncate: function (value) {
