@@ -215,10 +215,13 @@ export default {
   },
   methods: {
     getData() {
+      const loader = this.$loading.show();
+
       axios
         .get("/api")
         .then((res) => {
           this.data = res.data;
+          loader.hide();
         })
         .catch((error) => {
           console.log(error.res);

@@ -92,7 +92,6 @@
             </tr>
           </table>
         </div>
-        '
       </article>
       <article v-else-if="isActive === 2" class="review">
         <h2>Reviews</h2>
@@ -284,8 +283,11 @@ export default {
   },
   methods: {
     getDetail() {
+      const loader = this.$loading.show();
+
       axios.get("/api/detail/" + this.countryId).then((res) => {
         this.data = res.data;
+        loader.hide();
       });
     },
     tabChange: function (num) {
@@ -297,3 +299,10 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+tr:nth-child(odd) {
+  white-space: nowrap;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+</style>
