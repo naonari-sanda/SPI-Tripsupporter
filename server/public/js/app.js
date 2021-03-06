@@ -43686,38 +43686,58 @@ var render = function() {
       _vm.isActive === 1
         ? _c("article", { staticClass: "profile" }, [
             _c("div", [
-              _c("h2", [_vm._v("profile")]),
+              _c("h2", [_vm._v("Profile")]),
               _vm._v(" "),
               _c("table", { staticClass: "table table-striped" }, [
-                _vm._m(0),
+                _c("tr", [
+                  _c("th", [_vm._v("面積")]),
+                  _vm._v(" "),
+                  _c("td", [
+                    _vm._v(
+                      "約" +
+                        _vm._s(_vm.data.area.toLocaleString()) +
+                        "万平方キロメートル"
+                    )
+                  ])
+                ]),
                 _vm._v(" "),
                 _c("tr", [
                   _c("th", [_vm._v("人口")]),
                   _vm._v(" "),
                   _c("td", [
-                    _vm._v("約" + _vm._s(_vm.data.population) + "万人")
+                    _vm._v(
+                      "約" +
+                        _vm._s(_vm.data.population.toLocaleString()) +
+                        "万人"
+                    )
                   ])
                 ]),
                 _vm._v(" "),
                 _c("tr", [
                   _c("th", [_vm._v("首都")]),
                   _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(_vm.data.population))])
+                  _c("td", [_vm._v(_vm._s(_vm.data.capital.toLocaleString()))])
                 ]),
                 _vm._v(" "),
-                _vm._m(1),
+                _c("tr", [
+                  _c("th", [_vm._v("母国語")]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(_vm.data.language))])
+                ]),
                 _vm._v(" "),
                 _c("tr", [
                   _c("th", [_vm._v("宗教")]),
                   _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(_vm.data.population))])
+                  _c("td", [_vm._v(_vm._s(_vm.data.religion))])
                 ]),
                 _vm._v(" "),
                 _c("tr", [
                   _c("th", [_vm._v("GDP")]),
                   _vm._v(" "),
                   _c("td", [
-                    _vm._v("約" + _vm._s(_vm.data.population) + "万ドル")
+                    _vm._v(
+                      "約" + _vm._s(_vm.data.gdp.toLocaleString()) + "万ドル"
+                    )
                   ])
                 ]),
                 _vm._v(" "),
@@ -43727,7 +43747,7 @@ var render = function() {
                   _c("td", [
                     _vm._v(
                       "\n              約" +
-                        _vm._s(_vm.data.population) +
+                        _vm._s(_vm.data.happiness.toLocaleString()) +
                         "\n              "
                     ),
                     _c(
@@ -43743,9 +43763,17 @@ var render = function() {
                   ])
                 ]),
                 _vm._v(" "),
-                _vm._m(2),
+                _c("tr", [
+                  _vm._m(0),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(_vm.data.covid))])
+                ]),
                 _vm._v(" "),
-                _vm._m(3)
+                _c("tr", [
+                  _c("th", [_vm._v("詳細")]),
+                  _vm._v(" "),
+                  _c("td", [_c("p", [_vm._v(_vm._s(_vm.data.detail))])])
+                ])
               ])
             ]),
             _vm._v("\n      '\n    ")
@@ -43759,9 +43787,9 @@ var render = function() {
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "wrapper" }, [
-              _vm._m(4),
+              _vm._m(1),
               _vm._v(" "),
-              _vm._m(5),
+              _vm._m(2),
               _vm._v(" "),
               _c("p", { staticClass: "mt-1 ml-1 mb-0" }, [
                 _vm._v("xxxxに投稿しました。")
@@ -43960,9 +43988,9 @@ var render = function() {
                 )
               ]),
               _vm._v(" "),
-              _vm._m(6),
+              _vm._m(3),
               _vm._v(" "),
-              _vm._m(7),
+              _vm._m(4),
               _vm._v(" "),
               _c("img", {
                 staticClass: "img img-thumbnail",
@@ -43984,37 +44012,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("tr", [
-      _c("th", [_vm._v("面積")]),
-      _vm._v(" "),
-      _c("td", [_vm._v("約万平方キロメートル")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("tr", [_c("th", [_vm._v("母国語")]), _vm._v(" "), _c("td")])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("tr", [
-      _c("th", [_vm._v("入国制限"), _c("br"), _vm._v("（コロナ）")]),
-      _vm._v(" "),
-      _c("td")
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("tr", [
-      _c("th", [_vm._v("詳細")]),
-      _vm._v(" "),
-      _c("td", [_c("p")])
-    ])
+    return _c("th", [_vm._v("入国制限"), _c("br"), _vm._v("（コロナ）")])
   },
   function() {
     var _vm = this
