@@ -87,7 +87,7 @@
             <tr>
               <th>詳細</th>
               <td>
-                <p>{{ data.detail }}</p>
+                {{ data.detail }}
               </td>
             </tr>
           </table>
@@ -248,9 +248,13 @@
         </div>
       </article>
 
-      <article v-else-if="isActive === 3" class="favorite"></article>
+      <article v-else-if="isActive === 3" class="favorite">
+        <h2 class="mb-0">Favorites</h2>
+      </article>
 
-      <article v-else-if="isActive === 4" class="phots"></article>
+      <article v-else-if="isActive === 4" class="phots">
+        <h2 font-weight-bold>Photo gallery</h2>
+      </article>
     </div>
   </div>
 </template>
@@ -302,7 +306,6 @@ export default {
 
 <style lang="scss" scoped>
 tr:nth-child(odd) {
-  white-space: nowrap;
   background-color: rgba(0, 0, 0, 0.05);
 }
 </style>

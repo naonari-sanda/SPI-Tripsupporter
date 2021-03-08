@@ -2298,6 +2298,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -7934,7 +7938,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "tr[data-v-fef7bcf4]:nth-child(odd) {\n  white-space: nowrap;\n  background-color: rgba(0, 0, 0, 0.05);\n}", ""]);
+exports.push([module.i, "tr[data-v-fef7bcf4]:nth-child(odd) {\n  background-color: rgba(0, 0, 0, 0.05);\n}", ""]);
 
 // exports
 
@@ -43824,7 +43828,13 @@ var render = function() {
                 _c("tr", [
                   _c("th", [_vm._v("詳細")]),
                   _vm._v(" "),
-                  _c("td", [_c("p", [_vm._v(_vm._s(_vm.data.detail))])])
+                  _c("td", [
+                    _vm._v(
+                      "\n              " +
+                        _vm._s(_vm.data.detail) +
+                        "\n            "
+                    )
+                  ])
                 ])
               ])
             ])
@@ -44051,9 +44061,15 @@ var render = function() {
             ])
           ])
         : _vm.isActive === 3
-        ? _c("article", { staticClass: "favorite" })
+        ? _c("article", { staticClass: "favorite" }, [
+            _c("h2", { staticClass: "mb-0" }, [_vm._v("Favorites")])
+          ])
         : _vm.isActive === 4
-        ? _c("article", { staticClass: "phots" })
+        ? _c("article", { staticClass: "phots" }, [
+            _c("h2", { attrs: { "font-weight-bold": "" } }, [
+              _vm._v("Photo gallery")
+            ])
+          ])
         : _vm._e()
     ])
   ])
