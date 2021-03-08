@@ -2314,7 +2314,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+<<<<<<< HEAD
 
+=======
+>>>>>>> develop
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -7939,6 +7942,28 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+<<<<<<< HEAD
+=======
+/***/ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/pages/DetailComponent.vue?vue&type=style&index=0&id=fef7bcf4&lang=scss&scoped=true&":
+/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/pages/DetailComponent.vue?vue&type=style&index=0&id=fef7bcf4&lang=scss&scoped=true& ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "tr[data-v-fef7bcf4]:nth-child(odd) {\n  background-color: rgba(0, 0, 0, 0.05);\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
+>>>>>>> develop
 /***/ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/pages/LoginComponent.vue?vue&type=style&index=0&id=5a8112ac&lang=scss&scoped=true&":
 /*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/pages/LoginComponent.vue?vue&type=style&index=0&id=5a8112ac&lang=scss&scoped=true& ***!
@@ -43792,7 +43817,13 @@ var render = function() {
                 _c("tr", [
                   _c("th", [_vm._v("詳細")]),
                   _vm._v(" "),
-                  _c("td", [_c("p", [_vm._v(_vm._s(_vm.data.detail))])])
+                  _c("td", [
+                    _vm._v(
+                      "\n              " +
+                        _vm._s(_vm.data.detail) +
+                        "\n            "
+                    )
+                  ])
                 ])
               ])
             ]),
@@ -44020,11 +44051,18 @@ var render = function() {
             ])
           ])
         : _vm.isActive === 3
+<<<<<<< HEAD
         ? _c("article", { staticClass: "favorite" }, [_vm._m(8)])
+=======
+        ? _c("article", { staticClass: "favorite" }, [
+            _c("h2", { staticClass: "mb-0" }, [_vm._v("Favorites")])
+          ])
+>>>>>>> develop
         : _vm.isActive === 4
         ? _c("article", { staticClass: "phots" }, [
             _c("h2", { attrs: { "font-weight-bold": "" } }, [
               _vm._v("Photo gallery")
+<<<<<<< HEAD
             ]),
             _vm._v(" "),
             _vm.auth.length !== 0
@@ -44038,6 +44076,9 @@ var render = function() {
                   [_vm._v("画像を投稿しよう！")]
                 )
               : _vm._e()
+=======
+            ])
+>>>>>>> develop
           ])
         : _vm._e()
     ])

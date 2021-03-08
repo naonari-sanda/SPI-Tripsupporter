@@ -87,7 +87,7 @@
             <tr>
               <th>詳細</th>
               <td>
-                <p>{{ data.detail }}</p>
+                {{ data.detail }}
               </td>
             </tr>
           </table>
@@ -250,13 +250,18 @@
       </article>
 
       <article v-else-if="isActive === 3" class="favorite">
+<<<<<<< HEAD
         <div class="d-flex mb-3">
           <h2 class="mb-0">favorites</h2>
         </div>
+=======
+        <h2 class="mb-0">Favorites</h2>
+>>>>>>> develop
       </article>
 
       <article v-else-if="isActive === 4" class="phots">
         <h2 font-weight-bold>Photo gallery</h2>
+<<<<<<< HEAD
         <a
           v-if="auth.length !== 0"
           @click="showImage"
@@ -264,6 +269,8 @@
           class="btn btn-danger mb-2"
           >画像を投稿しよう！</a
         >
+=======
+>>>>>>> develop
       </article>
     </div>
   </div>
@@ -315,4 +322,14 @@ export default {
     this.getDetail();
   },
 };
+<<<<<<< HEAD
 </script>
+=======
+</script>
+
+<style lang="scss" scoped>
+tr:nth-child(odd) {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+</style>
+>>>>>>> develop
