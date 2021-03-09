@@ -2049,10 +2049,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+<<<<<<< HEAD
 //
-//
-//
-//
+=======
+>>>>>>> develop
 //
 //
 //
@@ -2315,8 +2315,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 <<<<<<< HEAD
+//
+//
+//
+<<<<<<< HEAD
 
 =======
+>>>>>>> develop
+=======
+
 >>>>>>> develop
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -43830,35 +43837,77 @@ var render = function() {
             _vm._v("\n      '\n    ")
           ])
         : _vm.isActive === 2
-        ? _c("article", { staticClass: "review" }, [
-            _c("h2", [_vm._v("Reviews")]),
-            _vm._v(" "),
-            _c("p", { staticClass: "mb-3 font-weight-bold" }, [
-              _vm._v("件のレビューがありました")
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "wrapper" }, [
-              _vm._m(1),
+        ? _c(
+            "article",
+            { staticClass: "review" },
+            [
+              _c("h2", [_vm._v("Reviews")]),
               _vm._v(" "),
-              _vm._m(2),
-              _vm._v(" "),
-              _c("p", { staticClass: "mt-1 ml-1 mb-0" }, [
-                _vm._v("xxxxに投稿しました。")
+              _c("p", { staticClass: "mb-3 font-weight-bold" }, [
+                _vm._v(
+                  "\n        " +
+                    _vm._s(_vm.data.reviews.length) +
+                    "件のレビューがありました\n      "
+                )
               ]),
               _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "star d-flex align-items-center ml-1 mb-2" },
-                [
+              _vm._l(_vm.data.reviews, function(review, index) {
+                return _c("div", { key: index, staticClass: "wrapper" }, [
+                  _vm._m(1, true),
+                  _vm._v(" "),
+                  _vm._m(2, true),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "mt-1 ml-1 mb-0" }, [
+                    _vm._v("xxxxに投稿しました。")
+                  ]),
+                  _vm._v(" "),
                   _c(
-                    "p",
-                    {
-                      staticClass:
-                        "d-flex align-items-center mb-0 mr-1 font-weight-bold"
-                    },
-                    [_vm._v("\n            総合\n          ")]
+                    "div",
+                    { staticClass: "star d-flex align-items-center ml-1 mb-2" },
+                    [
+                      _c(
+                        "p",
+                        {
+                          staticClass:
+                            "d-flex align-items-center mb-0 mr-1 font-weight-bold"
+                        },
+                        [_vm._v("\n            総合\n          ")]
+                      ),
+                      _vm._v(" "),
+                      _c("star-rating", {
+                        attrs: {
+                          increment: 0.5,
+                          rating: 1,
+                          "read-only": true,
+                          "show-rating": false,
+                          "star-size": 20,
+                          "active-color": "#ff4742"
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("p", {
+                        staticClass:
+                          "custom-text d-flex align-items-center mb-0 ml-1 mr-1"
+                      }),
+                      _vm._v(" "),
+                      _c(
+                        "a",
+                        {
+                          attrs: {
+                            href: "",
+                            "data-toggle": "collapse",
+                            "data-target": "",
+                            "aria-expand": "false",
+                            "aria-controls": ""
+                          }
+                        },
+                        [_vm._v("評価を詳しく見る")]
+                      )
+                    ],
+                    1
                   ),
                   _vm._v(" "),
+<<<<<<< HEAD
                   _c("star-rating", {
                     attrs: {
                       increment: 0.5,
@@ -43869,187 +43918,198 @@ var render = function() {
                       "active-color": "#ff4742"
                     }
                   }),
-                  _vm._v(" "),
-                  _c("p", {
-                    staticClass:
-                      "custom-text d-flex align-items-center mb-0 ml-1 mr-1"
-                  }),
-                  _vm._v(" "),
+=======
                   _c(
-                    "a",
-                    {
-                      attrs: {
-                        href: "",
-                        "data-toggle": "collapse",
-                        "data-target": "",
-                        "aria-expand": "false",
-                        "aria-controls": ""
-                      }
-                    },
-                    [_vm._v("評価を詳しく見る")]
-                  )
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c("div", { staticClass: "collapse", attrs: { id: "review-" } }, [
-                _c(
-                  "div",
-                  { staticClass: "star d-flex align-items-center ml-1 mb-2" },
-                  [
-                    _c(
-                      "p",
-                      { staticClass: "d-flex align-items-center mb-0 mr-1" },
-                      [_vm._v("治安")]
-                    ),
-                    _vm._v(" "),
-                    _c("star-rating", {
-                      attrs: {
-                        increment: 0.5,
-                        rating: 1,
-                        "read-only": true,
-                        "show-rating": false,
-                        "star-size": 20,
-                        "active-color": "#ff4742"
-                      }
-                    }),
-                    _vm._v(" "),
-                    _c("p", {
-                      staticClass:
-                        "custom-text d-flex align-items-center mb-0 ml-1 mr-1"
-                    })
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "star d-flex align-items-center ml-1 mb-2" },
-                  [
-                    _c(
-                      "p",
-                      { staticClass: "d-flex align-items-center mb-0 mr-1" },
-                      [_vm._v("費用")]
-                    ),
-                    _vm._v(" "),
-                    _c("star-rating", {
-                      attrs: {
-                        increment: 0.5,
-                        rating: 3,
-                        "read-only": true,
-                        "show-rating": false,
-                        "star-size": 20,
-                        "active-color": "#ff4742"
-                      }
-                    }),
-                    _vm._v(" "),
-                    _c("p", {
-                      staticClass:
-                        "custom-text d-flex align-items-center mb-0 ml-1 mr-1"
-                    })
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "star d-flex align-items-center ml-1 mb-2" },
-                  [
-                    _c(
-                      "p",
-                      { staticClass: "d-flex align-items-center mb-0 mr-1" },
-                      [_vm._v("観光")]
-                    ),
-                    _vm._v(" "),
-                    _c("star-rating", {
-                      attrs: {
-                        increment: 0.5,
-                        rating: 2,
-                        "read-only": true,
-                        "show-rating": false,
-                        "star-size": 20,
-                        "active-color": "#ff4742"
-                      }
-                    }),
-                    _vm._v(" "),
-                    _c("p", {
-                      staticClass:
-                        "custom-text d-flex align-items-center mb-0 ml-1 mr-1"
-                    })
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "star d-flex align-items-center ml-1 mb-2" },
-                  [
-                    _c(
-                      "p",
-                      { staticClass: "d-flex align-items-center mb-0 mr-1" },
-                      [_vm._v("料理")]
-                    ),
-                    _vm._v(" "),
-                    _c("star-rating", {
-                      attrs: {
-                        increment: 0.5,
-                        rating: 3,
-                        "read-only": true,
-                        "show-rating": false,
-                        "star-size": 20,
-                        "active-color": "#ff4742"
-                      }
-                    }),
-                    _vm._v(" "),
-                    _c("p", {
-                      staticClass:
-                        "custom-text d-flex align-items-center mb-0 ml-1 mr-1"
-                    })
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "star d-flex align-items-center ml-1 mb-2" },
-                  [
-                    _c(
-                      "p",
-                      { staticClass: "d-flex align-items-center mb-0 mr-1" },
-                      [_vm._v("楽しさ")]
-                    ),
-                    _vm._v(" "),
-                    _c("star-rating", {
-                      attrs: {
-                        increment: 0.5,
-                        rating: 2,
-                        "read-only": true,
-                        "show-rating": false,
-                        "star-size": 20,
-                        "active-color": "#ff4742"
-                      }
-                    }),
-                    _vm._v(" "),
-                    _c("p", {
-                      staticClass:
-                        "custom-text d-flex align-items-center mb-0 ml-1 mr-1"
-                    })
-                  ],
-                  1
-                )
-              ]),
-              _vm._v(" "),
-              _vm._m(3),
-              _vm._v(" "),
-              _vm._m(4),
-              _vm._v(" "),
-              _c("img", {
-                staticClass: "img img-thumbnail",
-                staticStyle: { width: "200px" },
-                attrs: { src: "" }
+                    "div",
+                    { staticClass: "collapse", attrs: { id: "review-" } },
+                    [
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "star d-flex align-items-center ml-1 mb-2"
+                        },
+                        [
+                          _c(
+                            "p",
+                            {
+                              staticClass: "d-flex align-items-center mb-0 mr-1"
+                            },
+                            [_vm._v("治安")]
+                          ),
+                          _vm._v(" "),
+                          _c("star-rating", {
+                            attrs: {
+                              increment: 0.5,
+                              rating: 1,
+                              "read-only": true,
+                              "show-rating": false,
+                              "star-size": 20,
+                              "active-color": "#ff4742"
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("p", {
+                            staticClass:
+                              "custom-text d-flex align-items-center mb-0 ml-1 mr-1"
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "star d-flex align-items-center ml-1 mb-2"
+                        },
+                        [
+                          _c(
+                            "p",
+                            {
+                              staticClass: "d-flex align-items-center mb-0 mr-1"
+                            },
+                            [_vm._v("費用")]
+                          ),
+                          _vm._v(" "),
+                          _c("star-rating", {
+                            attrs: {
+                              increment: 0.5,
+                              rating: 3,
+                              "read-only": true,
+                              "show-rating": false,
+                              "star-size": 20,
+                              "active-color": "#ff4742"
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("p", {
+                            staticClass:
+                              "custom-text d-flex align-items-center mb-0 ml-1 mr-1"
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "star d-flex align-items-center ml-1 mb-2"
+                        },
+                        [
+                          _c(
+                            "p",
+                            {
+                              staticClass: "d-flex align-items-center mb-0 mr-1"
+                            },
+                            [_vm._v("観光")]
+                          ),
+                          _vm._v(" "),
+                          _c("star-rating", {
+                            attrs: {
+                              increment: 0.5,
+                              rating: 2,
+                              "read-only": true,
+                              "show-rating": false,
+                              "star-size": 20,
+                              "active-color": "#ff4742"
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("p", {
+                            staticClass:
+                              "custom-text d-flex align-items-center mb-0 ml-1 mr-1"
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "star d-flex align-items-center ml-1 mb-2"
+                        },
+                        [
+                          _c(
+                            "p",
+                            {
+                              staticClass: "d-flex align-items-center mb-0 mr-1"
+                            },
+                            [_vm._v("料理")]
+                          ),
+                          _vm._v(" "),
+                          _c("star-rating", {
+                            attrs: {
+                              increment: 0.5,
+                              rating: 3,
+                              "read-only": true,
+                              "show-rating": false,
+                              "star-size": 20,
+                              "active-color": "#ff4742"
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("p", {
+                            staticClass:
+                              "custom-text d-flex align-items-center mb-0 ml-1 mr-1"
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "star d-flex align-items-center ml-1 mb-2"
+                        },
+                        [
+                          _c(
+                            "p",
+                            {
+                              staticClass: "d-flex align-items-center mb-0 mr-1"
+                            },
+                            [_vm._v("楽しさ")]
+                          ),
+                          _vm._v(" "),
+                          _c("star-rating", {
+                            attrs: {
+                              increment: 0.5,
+                              rating: 2,
+                              "read-only": true,
+                              "show-rating": false,
+                              "star-size": 20,
+                              "active-color": "#ff4742"
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("p", {
+                            staticClass:
+                              "custom-text d-flex align-items-center mb-0 ml-1 mr-1"
+                          })
+                        ],
+                        1
+                      )
+                    ]
+                  ),
+>>>>>>> develop
+                  _vm._v(" "),
+                  _vm._m(3, true),
+                  _vm._v(" "),
+                  _vm._m(4, true),
+                  _vm._v(" "),
+                  _c("img", {
+                    staticClass: "img img-thumbnail",
+                    staticStyle: { width: "200px" },
+                    attrs: { src: "" }
+                  })
+                ])
               })
-            ])
-          ])
+            ],
+            2
+          )
         : _vm.isActive === 3
 <<<<<<< HEAD
         ? _c("article", { staticClass: "favorite" }, [_vm._m(8)])

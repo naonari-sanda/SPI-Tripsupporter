@@ -97,8 +97,14 @@
       <article v-else-if="isActive === 2" class="review">
         <h2>Reviews</h2>
 
-        <p class="mb-3 font-weight-bold">件のレビューがありました</p>
-        <div class="wrapper">
+        <p class="mb-3 font-weight-bold">
+          {{ data.reviews.length }}件のレビューがありました
+        </p>
+        <div
+          v-for="(review, index) in data.reviews"
+          :key="index"
+          class="wrapper"
+        >
           <a
             class="text-dark d-flex align-items-center font-weight-bold mb-0"
             href=""

@@ -43,7 +43,9 @@ class CountryController extends Controller
     //国詳細ページ
     public function detail(int $id)
     {
-        $country = Country::find($id);
+        $country = Country::with([
+            'reviews',
+        ])->find($id);
 
         return $country;
     }
