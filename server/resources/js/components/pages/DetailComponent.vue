@@ -96,8 +96,14 @@
       <article v-else-if="isActive === 2" class="review">
         <h2>Reviews</h2>
 
-        <p class="mb-3 font-weight-bold">件のレビューがありました</p>
-        <div class="wrapper">
+        <p class="mb-3 font-weight-bold">
+          {{ data.reviews.length }}件のレビューがありました
+        </p>
+        <div
+          v-for="(review, index) in data.reviews"
+          :key="index"
+          class="wrapper"
+        >
           <a
             class="text-dark d-flex align-items-center font-weight-bold mb-0"
             href=""
@@ -140,7 +146,7 @@
             <star-rating
               v-bind:increment="0.5"
               v-bind:rating="1"
-              read-only="true"
+              v-bind:read-only="true"
               v-bind:show-rating="false"
               v-bind:star-size="20"
               active-color="#ff4742"
@@ -260,6 +266,8 @@
 </template>
 
 <script>
+import StarRating from "vue-star-rating";
+
 export default {
   data() {
     return {
@@ -274,6 +282,9 @@ export default {
     auth: {
       type: Object | String,
     },
+  },
+  components: {
+    StarRating,
   },
   filters: {
     truncate: function (value) {
