@@ -2309,7 +2309,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -43892,7 +43891,7 @@ var render = function() {
                       _c("star-rating", {
                         attrs: {
                           increment: 0.5,
-                          rating: 1,
+                          rating: review.recommend,
                           "read-only": true,
                           "show-rating": false,
                           "star-size": 20,
@@ -43911,9 +43910,9 @@ var render = function() {
                           attrs: {
                             href: "",
                             "data-toggle": "collapse",
-                            "data-target": "",
+                            "data-target": "#review-" + review.id,
                             "aria-expand": "false",
-                            "aria-controls": ""
+                            "aria-controls": "review-" + review.id
                           }
                         },
                         [_vm._v("評価を詳しく見る")]
@@ -43924,7 +43923,10 @@ var render = function() {
                   _vm._v(" "),
                   _c(
                     "div",
-                    { staticClass: "collapse", attrs: { id: "review-" } },
+                    {
+                      staticClass: "collapse",
+                      attrs: { id: "review-" + review.id }
+                    },
                     [
                       _c(
                         "div",
@@ -44194,8 +44196,7 @@ var staticRenderFns = [
         _c("img", {
           staticClass: "cycle img-thumbnail mr-2",
           attrs: { src: "", alt: "ユーザーアイコン" }
-        }),
-        _vm._v("\n          xxxx}\\")
+        })
       ]
     )
   },
