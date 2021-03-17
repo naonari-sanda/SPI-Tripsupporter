@@ -136,8 +136,7 @@
               src=""
               alt="ユーザーアイコン"
             />
-            xxxx}\</a
-          >
+          </a>
           <p class="mt-1 ml-1 mb-0">xxxxに投稿しました。</p>
 
           <div class="star d-flex align-items-center ml-1 mb-2">
@@ -146,7 +145,7 @@
             </p>
             <star-rating
               v-bind:increment="0.5"
-              v-bind:rating="1"
+              v-bind:rating="review.recommend"
               v-bind:read-only="true"
               v-bind:show-rating="false"
               v-bind:star-size="20"
@@ -157,13 +156,13 @@
             <a
               href=""
               data-toggle="collapse"
-              data-target=""
+              :data-target="'#review-' + review.id"
               aria-expand="false"
-              aria-controls=""
+              :aria-controls="'review-' + review.id"
               >評価を詳しく見る</a
             >
           </div>
-          <div class="collapse" id="review-">
+          <div class="collapse" :id="'review-' + review.id">
             <div class="star d-flex align-items-center ml-1 mb-2">
               <p class="d-flex align-items-center mb-0 mr-1">治安</p>
               <star-rating
