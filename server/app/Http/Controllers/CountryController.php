@@ -44,7 +44,7 @@ class CountryController extends Controller
     public function detail(int $id)
     {
         $country = Country::with([
-            'reviews',
+            'reviews.user.acount',
         ])->find($id);
 
         return $country;

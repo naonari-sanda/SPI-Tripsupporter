@@ -106,38 +106,62 @@
           class="wrapper"
         >
           <a
+            v-if="auth.length !== 0"
             class="text-dark d-flex align-items-center font-weight-bold mb-0"
             href=""
           >
             <img
               class="cycle img-thumbnail mr-2"
-              src=""
-              alt="ユーザーアイコン" />
+              :src="review.user.acount.icon"
+              alt="ユーザーアイコン"
+            />
             <img
               class="cycle img-thumbnail mr-2"
               src="https://tripsupporter.s3-ap-northeast-1.amazonaws.com/men.png"
-              alt="男性アイコン" />
+              alt="男性アイコン"
+            />
             <img
               class="cycle img-thumbnail mr-2"
               src="https://tripsupporter.s3-ap-northeast-1.amazonaws.com/women.png"
-              alt="女性アイコン" />
+              alt="女性アイコン"
+            />
             <img
               class="cycle img-thumbnail mr-2"
               src="https://tripsupporter.s3-ap-northeast-1.amazonaws.com/none.png"
               alt="アイコン"
-          /></a>
+            />{{ review.user.name }}</a
+          >
           <a
+            v-else
             class="text-dark d-flex align-items-center font-weight-bold mb-0"
             data-toggle="modal"
             data-target="#guestModal"
           >
             <img
               class="cycle img-thumbnail mr-2"
-              src=""
+              :src="review.user.acount.icon"
               alt="ユーザーアイコン"
             />
-          </a>
-          <p class="mt-1 ml-1 mb-0">xxxxに投稿しました。</p>
+            <img
+              class="cycle img-thumbnail mr-2"
+              src="https://tripsupporter.s3-ap-northeast-1.amazonaws.com/men.png"
+              alt="男性アイコン"
+            />
+            <img
+              class="cycle img-thumbnail mr-2"
+              src="https://tripsupporter.s3-ap-northeast-1.amazonaws.com/women.png"
+              alt="女性アイコン"
+            />
+            <img
+              class="cycle img-thumbnail mr-2"
+              src="https://tripsupporter.s3-ap-northeast-1.amazonaws.com/none.png"
+              alt="アイコン"
+            />{{ review.user.name }}</a
+          >
+
+          <p class="mt-1 ml-1 mb-0">
+            {{ review.created_at | moment }}に投稿しました。
+          </p>
 
           <div class="star d-flex align-items-center ml-1 mb-2">
             <p class="d-flex align-items-center mb-0 mr-1 font-weight-bold">
@@ -145,7 +169,7 @@
             </p>
             <star-rating
               v-bind:increment="0.5"
-              v-bind:rating="review.recommend"
+              v-bind:rating="Number(review.recommend)"
               v-bind:read-only="true"
               v-bind:show-rating="false"
               v-bind:star-size="20"
@@ -167,7 +191,7 @@
               <p class="d-flex align-items-center mb-0 mr-1">治安</p>
               <star-rating
                 v-bind:increment="0.5"
-                v-bind:rating="1"
+                v-bind:rating="Number(review.safe)"
                 v-bind:read-only="true"
                 v-bind:show-rating="false"
                 v-bind:star-size="20"
@@ -182,7 +206,7 @@
               <p class="d-flex align-items-center mb-0 mr-1">費用</p>
               <star-rating
                 v-bind:increment="0.5"
-                v-bind:rating="3"
+                v-bind:rating="Number(review.cost)"
                 v-bind:read-only="true"
                 v-bind:show-rating="false"
                 v-bind:star-size="20"
@@ -197,7 +221,7 @@
               <p class="d-flex align-items-center mb-0 mr-1">観光</p>
               <star-rating
                 v-bind:increment="0.5"
-                v-bind:rating="2"
+                v-bind:rating="Number(review.tourism)"
                 v-bind:read-only="true"
                 v-bind:show-rating="false"
                 v-bind:star-size="20"
@@ -212,7 +236,7 @@
               <p class="d-flex align-items-center mb-0 mr-1">料理</p>
               <star-rating
                 v-bind:increment="0.5"
-                v-bind:rating="3"
+                v-bind:rating="Number(review.food)"
                 v-bind:read-only="true"
                 v-bind:show-rating="false"
                 v-bind:star-size="20"
@@ -227,7 +251,7 @@
               <p class="d-flex align-items-center mb-0 mr-1">楽しさ</p>
               <star-rating
                 v-bind:increment="0.5"
-                v-bind:rating="2"
+                v-bind:rating="Number(review.fun)"
                 v-bind:read-only="true"
                 v-bind:show-rating="false"
                 v-bind:star-size="20"
@@ -242,31 +266,30 @@
 
           <div class="fill mb-1">
             <p class="mb-1 font-weight-bold">お気に入り都市</p>
-            <p class="text mb-0"></p>
+            <p class="text mb-0">{{ review.city }}</p>
           </div>
 
           <div class="fill mb-3">
             <p class="mb-1 font-weight-bold">レビュー</p>
-            <p class="text mb-0"></p>
+            <p class="text mb-0">{{ review.review }}</p>
           </div>
 
-          <img class="img img-thumbnail" src="" style="width: 200px" />
+          <img
+            v-if="review.imgpath"
+            class="img img-thumbnail"
+            :src="review.imgpath"
+            style="width: 200px"
+          />
         </div>
       </article>
 
       <article v-else-if="isActive === 3" class="favorite">
-<<<<<<< HEAD
-        <div class="d-flex mb-3">
-          <h2 class="mb-0">favorites</h2>
-        </div>
-=======
         <h2 class="mb-0">Favorites</h2>
->>>>>>> develop
       </article>
 
       <article v-else-if="isActive === 4" class="phots">
         <h2 font-weight-bold>Photo gallery</h2>
-<<<<<<< HEAD
+
         <a
           v-if="auth.length !== 0"
           @click="showImage"
@@ -274,8 +297,6 @@
           class="btn btn-danger mb-2"
           >画像を投稿しよう！</a
         >
-=======
->>>>>>> develop
       </article>
     </div>
   </div>
@@ -283,6 +304,7 @@
 
 <script>
 import StarRating from "vue-star-rating";
+import moment from "moment";
 
 export default {
   data() {
@@ -312,6 +334,9 @@ export default {
       }
       return value.substring(0, length) + ommision;
     },
+    moment: function (data) {
+      return moment(data).format("Y年M月D日");
+    },
   },
   methods: {
     getDetail() {
@@ -327,9 +352,6 @@ export default {
     this.getDetail();
   },
 };
-<<<<<<< HEAD
-</script>
-=======
 </script>
 
 <style lang="scss" scoped>
@@ -337,4 +359,3 @@ tr:nth-child(odd) {
   background-color: rgba(0, 0, 0, 0.05);
 }
 </style>
->>>>>>> develop

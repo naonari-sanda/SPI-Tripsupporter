@@ -39,6 +39,7 @@
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
+        "moment": "^2.29.1",
         "vue-star-rating": "^1.7.0",
         "vuejs-dialog": "^1.4.2"
     },
