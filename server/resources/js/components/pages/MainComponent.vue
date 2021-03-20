@@ -1,7 +1,7 @@
 <template>
   <div>
     <header>
-      <header-component :auth="auth" />
+      <header-component :auth="auth" :icon="icon" />
     </header>
     <main>
       <router-view :errors="errors" :auth="auth" />
@@ -27,6 +27,9 @@ export default {
     },
     auth: {
       type: Object | Array,
+    },
+    icon: {
+      type: String | Array,
     },
   },
 };

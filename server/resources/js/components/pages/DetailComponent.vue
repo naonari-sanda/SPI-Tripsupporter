@@ -20,7 +20,7 @@
             data-toggle="modal"
             data-target="#guestModal"
           >
-            レビューを投稿{{ isActive }}
+            レビューを投稿
           </button>
         </div>
       </div>
@@ -111,21 +111,13 @@
             href=""
           >
             <img
+              v-if="review.user.acount.icon"
               class="cycle img-thumbnail mr-2"
               :src="review.user.acount.icon"
               alt="ユーザーアイコン"
             />
             <img
-              class="cycle img-thumbnail mr-2"
-              src="https://tripsupporter.s3-ap-northeast-1.amazonaws.com/men.png"
-              alt="男性アイコン"
-            />
-            <img
-              class="cycle img-thumbnail mr-2"
-              src="https://tripsupporter.s3-ap-northeast-1.amazonaws.com/women.png"
-              alt="女性アイコン"
-            />
-            <img
+              v-else
               class="cycle img-thumbnail mr-2"
               src="https://tripsupporter.s3-ap-northeast-1.amazonaws.com/none.png"
               alt="アイコン"
@@ -138,21 +130,13 @@
             data-target="#guestModal"
           >
             <img
+              v-if="review.user.acount.icon"
               class="cycle img-thumbnail mr-2"
               :src="review.user.acount.icon"
               alt="ユーザーアイコン"
             />
             <img
-              class="cycle img-thumbnail mr-2"
-              src="https://tripsupporter.s3-ap-northeast-1.amazonaws.com/men.png"
-              alt="男性アイコン"
-            />
-            <img
-              class="cycle img-thumbnail mr-2"
-              src="https://tripsupporter.s3-ap-northeast-1.amazonaws.com/women.png"
-              alt="女性アイコン"
-            />
-            <img
+              v-else
               class="cycle img-thumbnail mr-2"
               src="https://tripsupporter.s3-ap-northeast-1.amazonaws.com/none.png"
               alt="アイコン"

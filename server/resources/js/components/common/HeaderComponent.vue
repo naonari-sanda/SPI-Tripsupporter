@@ -23,7 +23,7 @@
         <ul class="navbar-nav mr-auto"></ul>
 
         <!-- Right Side Of Navbar -->
-        <ul class="navbar-nav ml-auto">
+        <ul class="navbar-nav ml-auto align-items-center">
           <!-- Authentication Links -->
 
           <li v-if="auth.length === 0" class="nav-item">
@@ -61,13 +61,25 @@
           <li v-if="auth.length !== 0" class="nav-item dropdown">
             <a
               id="navbarDropdown"
-              class="nav-link dropdown-toggle"
+              class="nav-link dropdown-toggle d-flex align-items-center py-0"
               href="#"
               role="button"
               data-toggle="dropdown"
               aria-haspopup="true"
               aria-expanded="false"
             >
+              <img
+                v-if="icon"
+                class="cycle img-thumbnail mr-2"
+                :src="icon"
+                alt="ユーザーアイコン"
+              />
+              <img
+                v-else
+                class="cycle img-thumbnail mr-2"
+                src="https://tripsupporter.s3-ap-northeast-1.amazonaws.com/none.png"
+                alt="アイコン"
+              />
               {{ auth.name }}<span class="caret"></span>
             </a>
 
@@ -108,6 +120,9 @@ export default {
   props: {
     auth: {
       type: Object | Array,
+    },
+    icon: {
+      type: String | Array,
     },
   },
   methods: {
