@@ -69,9 +69,9 @@
               aria-expanded="false"
             >
               <img
-                v-if="icon"
+                v-if="acount.icon"
                 class="cycle img-thumbnail mr-2"
-                :src="icon"
+                :src="acount.icon"
                 alt="ユーザーアイコン"
               />
               <img
@@ -121,7 +121,7 @@ export default {
     auth: {
       type: Object | Array,
     },
-    icon: {
+    acount: {
       type: String | Array,
     },
   },

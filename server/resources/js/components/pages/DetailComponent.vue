@@ -105,32 +105,36 @@
           :key="index"
           class="wrapper"
         >
-          <a
-            v-if="auth.length !== 0"
-            class="text-dark d-flex align-items-center font-weight-bold mb-0"
-            href=""
+          <router-link
+            :to="{ name: 'user', params: { userId: review.user.id } }"
           >
-            <img
-              v-if="review.user.acount.icon"
-              class="cycle img-thumbnail mr-2"
-              :src="review.user.acount.icon"
-              alt="ユーザーアイコン"
-            />
-            <img
-              v-else
-              class="cycle img-thumbnail mr-2"
-              src="https://tripsupporter.s3-ap-northeast-1.amazonaws.com/none.png"
-              alt="アイコン"
-            />{{ review.user.name }}</a
+            <a
+              v-if="auth.length !== 0"
+              class="text-dark d-flex align-items-center font-weight-bold mb-0"
+              href=""
+            >
+              <img
+                v-if="review.user.acount.icon"
+                class="cycle img-thumbnail mr-2"
+                :src="review.user.acount.icon"
+                alt="ユーザーアイコン"
+              />
+              <img
+                v-else
+                class="cycle img-thumbnail mr-2"
+                src="https://tripsupporter.s3-ap-northeast-1.amazonaws.com/none.png"
+                alt="アイコン"
+              />{{ review.user.name }}</a
+            ></router-link
           >
           <a
-            v-else
+            v-if="auth.length == 0"
             class="text-dark d-flex align-items-center font-weight-bold mb-0"
             data-toggle="modal"
             data-target="#guestModal"
           >
             <img
-              v-if="review.user.acount.icon"
+              v-if="review.user.acount"
               class="cycle img-thumbnail mr-2"
               :src="review.user.acount.icon"
               alt="ユーザーアイコン"
@@ -269,6 +273,88 @@
 
       <article v-else-if="isActive === 3" class="favorite">
         <h2 class="mb-0">Favorites</h2>
+        <table class="table table-hover">
+          <thead class="">
+            <tr>
+              <th scope="col">ユーザー</th>
+              <th scope="col">性別</th>
+              <th scope="col">年齢</th>
+              <th scope="col">詳細</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="(like, index) in data.likes" :key="index">
+              <td>
+                <router-link
+                  :to="{ name: 'user', params: { userId: like.user.id } }"
+                >
+                  <a
+                    v-if="auth.length !== 0"
+                    class="text-dark d-flex align-items-center font-weight-bold mb-0"
+                    href=""
+                  >
+                    <img
+                      v-if="like.user.acount"
+                      class="cycle img-thumbnail mr-2"
+                      :src="like.user.acount.icon"
+                      alt="ユーザーアイコン"
+                    />
+                    <img
+                      v-else
+                      class="cycle img-thumbnail mr-2"
+                      src="https://tripsupporter.s3-ap-northeast-1.amazonaws.com/none.png"
+                      alt="アイコン"
+                    />
+                    {{ like.user.name }}</a
+                  ></router-link
+                >
+                <a
+                  v-if="auth.length == 0"
+                  class="text-dark d-flex align-items-center font-weight-bold mb-0"
+                  data-toggle="modal"
+                  data-target="#guestModal"
+                >
+                  <img
+                    v-if="like.user.acount"
+                    class="cycle img-thumbnail mr-2"
+                    :src="like.user.acount.icon"
+                    alt="ユーザーアイコン"
+                  />
+                  <img
+                    v-else
+                    class="cycle img-thumbnail mr-2"
+                    src="https://tripsupporter.s3-ap-northeast-1.amazonaws.com/none.png"
+                    alt="アイコン"
+                  />{{ like.user.name }}</a
+                >
+              </td>
+              <td v-if="like.user.acount">
+                {{ like.user.acount.gender }}
+              </td>
+              <td v-else>回答がありません</td>
+              <td v-if="like.user.acount">{{ like.user.acount.age }}</td>
+              <td v-else>回答がありません</td>
+              <td>
+                <a v-if="auth.length !== 0" class="btn btn-primary">詳細</a>
+
+                <a
+                  v-else
+                  data-toggle="modal"
+                  data-target="#guestModal"
+                  class="btn btn-primary"
+                  >詳細</a
+                >
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div>
+          <h5 class="mb-5">＊いいねの投稿がありません</h5>
+          <a type="button" class="btn btn-primary"
+            >お気に入りの国をさがそう！</a
+          >
+        </div>
       </article>
 
       <article v-else-if="isActive === 4" class="phots">
@@ -330,6 +416,9 @@ export default {
     },
     tabChange: function (num) {
       this.isActive = num;
+    },
+    showImage: function () {
+      return alert();
     },
   },
   mounted() {

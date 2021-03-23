@@ -9,7 +9,7 @@
 <body>
     <div id="app">
         <main class="">
-            <main-component :errors="{{ $errors }}" :auth="{{ Auth::user() ?? '[]' }}" :icon="{{ json_encode(Auth::user()->acount->icon) ?? '[]' }}" />
+            <main-component :errors="{{ $errors }}" :auth="{{ Auth::user() ?? '[]' }}" :acount="{{ json_encode(optional(Auth::user())->acount) ?? '[]' }}" />
         </main>
         @include('includes.common.modal')
     </div>

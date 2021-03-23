@@ -2034,7 +2034,7 @@ __webpack_require__.r(__webpack_exports__);
     auth: {
       type: Object | Array
     },
-    icon: {
+    acount: {
       type: String | Array
     }
   },
@@ -2060,6 +2060,92 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue_star_rating__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue_star_rating__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_1__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -2394,6 +2480,9 @@ __webpack_require__.r(__webpack_exports__);
     },
     tabChange: function tabChange(num) {
       this.isActive = num;
+    },
+    showImage: function showImage() {
+      return alert();
     }
   },
   mounted: function mounted() {
@@ -2909,7 +2998,7 @@ __webpack_require__.r(__webpack_exports__);
     auth: {
       type: Object | Array
     },
-    icon: {
+    acount: {
       type: String | Array
     }
   }
@@ -65138,11 +65227,11 @@ var render = function() {
                             }
                           },
                           [
-                            _vm.icon
+                            _vm.acount.icon
                               ? _c("img", {
                                   staticClass: "cycle img-thumbnail mr-2",
                                   attrs: {
-                                    src: _vm.icon,
+                                    src: _vm.acount.icon,
                                     alt: "ユーザーアイコン"
                                   }
                                 })
@@ -65500,334 +65589,496 @@ var render = function() {
               ]),
               _vm._v(" "),
               _vm._l(_vm.data.reviews, function(review, index) {
-                return _c("div", { key: index, staticClass: "wrapper" }, [
-                  _vm.auth.length !== 0
-                    ? _c(
-                        "a",
-                        {
-                          staticClass:
-                            "text-dark d-flex align-items-center font-weight-bold mb-0",
-                          attrs: { href: "" }
-                        },
-                        [
-                          review.user.acount.icon
-                            ? _c("img", {
-                                staticClass: "cycle img-thumbnail mr-2",
-                                attrs: {
-                                  src: review.user.acount.icon,
-                                  alt: "ユーザーアイコン"
-                                }
-                              })
-                            : _c("img", {
-                                staticClass: "cycle img-thumbnail mr-2",
-                                attrs: {
-                                  src:
-                                    "https://tripsupporter.s3-ap-northeast-1.amazonaws.com/none.png",
-                                  alt: "アイコン"
-                                }
-                              }),
-                          _vm._v(_vm._s(review.user.name))
-                        ]
-                      )
-                    : _c(
-                        "a",
-                        {
-                          staticClass:
-                            "text-dark d-flex align-items-center font-weight-bold mb-0",
-                          attrs: {
-                            "data-toggle": "modal",
-                            "data-target": "#guestModal"
-                          }
-                        },
-                        [
-                          review.user.acount.icon
-                            ? _c("img", {
-                                staticClass: "cycle img-thumbnail mr-2",
-                                attrs: {
-                                  src: review.user.acount.icon,
-                                  alt: "ユーザーアイコン"
-                                }
-                              })
-                            : _c("img", {
-                                staticClass: "cycle img-thumbnail mr-2",
-                                attrs: {
-                                  src:
-                                    "https://tripsupporter.s3-ap-northeast-1.amazonaws.com/none.png",
-                                  alt: "アイコン"
-                                }
-                              }),
-                          _vm._v(_vm._s(review.user.name))
-                        ]
-                      ),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "mt-1 ml-1 mb-0" }, [
-                    _vm._v(
-                      "\n          " +
-                        _vm._s(_vm._f("moment")(review.created_at)) +
-                        "に投稿しました。\n        "
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "star d-flex align-items-center ml-1 mb-2" },
-                    [
-                      _c(
-                        "p",
-                        {
-                          staticClass:
-                            "d-flex align-items-center mb-0 mr-1 font-weight-bold"
-                        },
-                        [_vm._v("\n            総合\n          ")]
-                      ),
-                      _vm._v(" "),
-                      _c("star-rating", {
+                return _c(
+                  "div",
+                  { key: index, staticClass: "wrapper" },
+                  [
+                    _c(
+                      "router-link",
+                      {
                         attrs: {
-                          increment: 0.5,
-                          rating: Number(review.recommend),
-                          "read-only": true,
-                          "show-rating": false,
-                          "star-size": 20,
-                          "active-color": "#ff4742"
-                        }
-                      }),
-                      _vm._v(" "),
-                      _c("p", {
-                        staticClass:
-                          "custom-text d-flex align-items-center mb-0 ml-1 mr-1"
-                      }),
-                      _vm._v(" "),
-                      _c(
-                        "a",
-                        {
-                          attrs: {
-                            href: "",
-                            "data-toggle": "collapse",
-                            "data-target": "#review-" + review.id,
-                            "aria-expand": "false",
-                            "aria-controls": "review-" + review.id
+                          to: {
+                            name: "user",
+                            params: { userId: review.user.id }
                           }
-                        },
-                        [_vm._v("評価を詳しく見る")]
+                        }
+                      },
+                      [
+                        _vm.auth.length !== 0
+                          ? _c(
+                              "a",
+                              {
+                                staticClass:
+                                  "text-dark d-flex align-items-center font-weight-bold mb-0",
+                                attrs: { href: "" }
+                              },
+                              [
+                                review.user.acount.icon
+                                  ? _c("img", {
+                                      staticClass: "cycle img-thumbnail mr-2",
+                                      attrs: {
+                                        src: review.user.acount.icon,
+                                        alt: "ユーザーアイコン"
+                                      }
+                                    })
+                                  : _c("img", {
+                                      staticClass: "cycle img-thumbnail mr-2",
+                                      attrs: {
+                                        src:
+                                          "https://tripsupporter.s3-ap-northeast-1.amazonaws.com/none.png",
+                                        alt: "アイコン"
+                                      }
+                                    }),
+                                _vm._v(_vm._s(review.user.name))
+                              ]
+                            )
+                          : _vm._e()
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _vm.auth.length == 0
+                      ? _c(
+                          "a",
+                          {
+                            staticClass:
+                              "text-dark d-flex align-items-center font-weight-bold mb-0",
+                            attrs: {
+                              "data-toggle": "modal",
+                              "data-target": "#guestModal"
+                            }
+                          },
+                          [
+                            review.user.acount
+                              ? _c("img", {
+                                  staticClass: "cycle img-thumbnail mr-2",
+                                  attrs: {
+                                    src: review.user.acount.icon,
+                                    alt: "ユーザーアイコン"
+                                  }
+                                })
+                              : _c("img", {
+                                  staticClass: "cycle img-thumbnail mr-2",
+                                  attrs: {
+                                    src:
+                                      "https://tripsupporter.s3-ap-northeast-1.amazonaws.com/none.png",
+                                    alt: "アイコン"
+                                  }
+                                }),
+                            _vm._v(_vm._s(review.user.name))
+                          ]
+                        )
+                      : _vm._e(),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "mt-1 ml-1 mb-0" }, [
+                      _vm._v(
+                        "\n          " +
+                          _vm._s(_vm._f("moment")(review.created_at)) +
+                          "に投稿しました。\n        "
                       )
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    {
-                      staticClass: "collapse",
-                      attrs: { id: "review-" + review.id }
-                    },
-                    [
-                      _c(
-                        "div",
-                        {
-                          staticClass:
-                            "star d-flex align-items-center ml-1 mb-2"
-                        },
-                        [
-                          _c(
-                            "p",
-                            {
-                              staticClass: "d-flex align-items-center mb-0 mr-1"
-                            },
-                            [_vm._v("治安")]
-                          ),
-                          _vm._v(" "),
-                          _c("star-rating", {
-                            attrs: {
-                              increment: 0.5,
-                              rating: Number(review.safe),
-                              "read-only": true,
-                              "show-rating": false,
-                              "star-size": 20,
-                              "active-color": "#ff4742"
-                            }
-                          }),
-                          _vm._v(" "),
-                          _c("p", {
-                            staticClass:
-                              "custom-text d-flex align-items-center mb-0 ml-1 mr-1"
-                          })
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "div",
-                        {
-                          staticClass:
-                            "star d-flex align-items-center ml-1 mb-2"
-                        },
-                        [
-                          _c(
-                            "p",
-                            {
-                              staticClass: "d-flex align-items-center mb-0 mr-1"
-                            },
-                            [_vm._v("費用")]
-                          ),
-                          _vm._v(" "),
-                          _c("star-rating", {
-                            attrs: {
-                              increment: 0.5,
-                              rating: Number(review.cost),
-                              "read-only": true,
-                              "show-rating": false,
-                              "star-size": 20,
-                              "active-color": "#ff4742"
-                            }
-                          }),
-                          _vm._v(" "),
-                          _c("p", {
-                            staticClass:
-                              "custom-text d-flex align-items-center mb-0 ml-1 mr-1"
-                          })
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "div",
-                        {
-                          staticClass:
-                            "star d-flex align-items-center ml-1 mb-2"
-                        },
-                        [
-                          _c(
-                            "p",
-                            {
-                              staticClass: "d-flex align-items-center mb-0 mr-1"
-                            },
-                            [_vm._v("観光")]
-                          ),
-                          _vm._v(" "),
-                          _c("star-rating", {
-                            attrs: {
-                              increment: 0.5,
-                              rating: Number(review.tourism),
-                              "read-only": true,
-                              "show-rating": false,
-                              "star-size": 20,
-                              "active-color": "#ff4742"
-                            }
-                          }),
-                          _vm._v(" "),
-                          _c("p", {
-                            staticClass:
-                              "custom-text d-flex align-items-center mb-0 ml-1 mr-1"
-                          })
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "div",
-                        {
-                          staticClass:
-                            "star d-flex align-items-center ml-1 mb-2"
-                        },
-                        [
-                          _c(
-                            "p",
-                            {
-                              staticClass: "d-flex align-items-center mb-0 mr-1"
-                            },
-                            [_vm._v("料理")]
-                          ),
-                          _vm._v(" "),
-                          _c("star-rating", {
-                            attrs: {
-                              increment: 0.5,
-                              rating: Number(review.food),
-                              "read-only": true,
-                              "show-rating": false,
-                              "star-size": 20,
-                              "active-color": "#ff4742"
-                            }
-                          }),
-                          _vm._v(" "),
-                          _c("p", {
-                            staticClass:
-                              "custom-text d-flex align-items-center mb-0 ml-1 mr-1"
-                          })
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "div",
-                        {
-                          staticClass:
-                            "star d-flex align-items-center ml-1 mb-2"
-                        },
-                        [
-                          _c(
-                            "p",
-                            {
-                              staticClass: "d-flex align-items-center mb-0 mr-1"
-                            },
-                            [_vm._v("楽しさ")]
-                          ),
-                          _vm._v(" "),
-                          _c("star-rating", {
-                            attrs: {
-                              increment: 0.5,
-                              rating: Number(review.fun),
-                              "read-only": true,
-                              "show-rating": false,
-                              "star-size": 20,
-                              "active-color": "#ff4742"
-                            }
-                          }),
-                          _vm._v(" "),
-                          _c("p", {
-                            staticClass:
-                              "custom-text d-flex align-items-center mb-0 ml-1 mr-1"
-                          })
-                        ],
-                        1
-                      )
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "fill mb-1" }, [
-                    _c("p", { staticClass: "mb-1 font-weight-bold" }, [
-                      _vm._v("お気に入り都市")
                     ]),
                     _vm._v(" "),
-                    _c("p", { staticClass: "text mb-0" }, [
-                      _vm._v(_vm._s(review.city))
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "fill mb-3" }, [
-                    _c("p", { staticClass: "mb-1 font-weight-bold" }, [
-                      _vm._v("レビュー")
+                    _c(
+                      "div",
+                      {
+                        staticClass: "star d-flex align-items-center ml-1 mb-2"
+                      },
+                      [
+                        _c(
+                          "p",
+                          {
+                            staticClass:
+                              "d-flex align-items-center mb-0 mr-1 font-weight-bold"
+                          },
+                          [_vm._v("\n            総合\n          ")]
+                        ),
+                        _vm._v(" "),
+                        _c("star-rating", {
+                          attrs: {
+                            increment: 0.5,
+                            rating: Number(review.recommend),
+                            "read-only": true,
+                            "show-rating": false,
+                            "star-size": 20,
+                            "active-color": "#ff4742"
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("p", {
+                          staticClass:
+                            "custom-text d-flex align-items-center mb-0 ml-1 mr-1"
+                        }),
+                        _vm._v(" "),
+                        _c(
+                          "a",
+                          {
+                            attrs: {
+                              href: "",
+                              "data-toggle": "collapse",
+                              "data-target": "#review-" + review.id,
+                              "aria-expand": "false",
+                              "aria-controls": "review-" + review.id
+                            }
+                          },
+                          [_vm._v("評価を詳しく見る")]
+                        )
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      {
+                        staticClass: "collapse",
+                        attrs: { id: "review-" + review.id }
+                      },
+                      [
+                        _c(
+                          "div",
+                          {
+                            staticClass:
+                              "star d-flex align-items-center ml-1 mb-2"
+                          },
+                          [
+                            _c(
+                              "p",
+                              {
+                                staticClass:
+                                  "d-flex align-items-center mb-0 mr-1"
+                              },
+                              [_vm._v("治安")]
+                            ),
+                            _vm._v(" "),
+                            _c("star-rating", {
+                              attrs: {
+                                increment: 0.5,
+                                rating: Number(review.safe),
+                                "read-only": true,
+                                "show-rating": false,
+                                "star-size": 20,
+                                "active-color": "#ff4742"
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c("p", {
+                              staticClass:
+                                "custom-text d-flex align-items-center mb-0 ml-1 mr-1"
+                            })
+                          ],
+                          1
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          {
+                            staticClass:
+                              "star d-flex align-items-center ml-1 mb-2"
+                          },
+                          [
+                            _c(
+                              "p",
+                              {
+                                staticClass:
+                                  "d-flex align-items-center mb-0 mr-1"
+                              },
+                              [_vm._v("費用")]
+                            ),
+                            _vm._v(" "),
+                            _c("star-rating", {
+                              attrs: {
+                                increment: 0.5,
+                                rating: Number(review.cost),
+                                "read-only": true,
+                                "show-rating": false,
+                                "star-size": 20,
+                                "active-color": "#ff4742"
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c("p", {
+                              staticClass:
+                                "custom-text d-flex align-items-center mb-0 ml-1 mr-1"
+                            })
+                          ],
+                          1
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          {
+                            staticClass:
+                              "star d-flex align-items-center ml-1 mb-2"
+                          },
+                          [
+                            _c(
+                              "p",
+                              {
+                                staticClass:
+                                  "d-flex align-items-center mb-0 mr-1"
+                              },
+                              [_vm._v("観光")]
+                            ),
+                            _vm._v(" "),
+                            _c("star-rating", {
+                              attrs: {
+                                increment: 0.5,
+                                rating: Number(review.tourism),
+                                "read-only": true,
+                                "show-rating": false,
+                                "star-size": 20,
+                                "active-color": "#ff4742"
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c("p", {
+                              staticClass:
+                                "custom-text d-flex align-items-center mb-0 ml-1 mr-1"
+                            })
+                          ],
+                          1
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          {
+                            staticClass:
+                              "star d-flex align-items-center ml-1 mb-2"
+                          },
+                          [
+                            _c(
+                              "p",
+                              {
+                                staticClass:
+                                  "d-flex align-items-center mb-0 mr-1"
+                              },
+                              [_vm._v("料理")]
+                            ),
+                            _vm._v(" "),
+                            _c("star-rating", {
+                              attrs: {
+                                increment: 0.5,
+                                rating: Number(review.food),
+                                "read-only": true,
+                                "show-rating": false,
+                                "star-size": 20,
+                                "active-color": "#ff4742"
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c("p", {
+                              staticClass:
+                                "custom-text d-flex align-items-center mb-0 ml-1 mr-1"
+                            })
+                          ],
+                          1
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          {
+                            staticClass:
+                              "star d-flex align-items-center ml-1 mb-2"
+                          },
+                          [
+                            _c(
+                              "p",
+                              {
+                                staticClass:
+                                  "d-flex align-items-center mb-0 mr-1"
+                              },
+                              [_vm._v("楽しさ")]
+                            ),
+                            _vm._v(" "),
+                            _c("star-rating", {
+                              attrs: {
+                                increment: 0.5,
+                                rating: Number(review.fun),
+                                "read-only": true,
+                                "show-rating": false,
+                                "star-size": 20,
+                                "active-color": "#ff4742"
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c("p", {
+                              staticClass:
+                                "custom-text d-flex align-items-center mb-0 ml-1 mr-1"
+                            })
+                          ],
+                          1
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "fill mb-1" }, [
+                      _c("p", { staticClass: "mb-1 font-weight-bold" }, [
+                        _vm._v("お気に入り都市")
+                      ]),
+                      _vm._v(" "),
+                      _c("p", { staticClass: "text mb-0" }, [
+                        _vm._v(_vm._s(review.city))
+                      ])
                     ]),
                     _vm._v(" "),
-                    _c("p", { staticClass: "text mb-0" }, [
-                      _vm._v(_vm._s(review.review))
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  review.imgpath
-                    ? _c("img", {
-                        staticClass: "img img-thumbnail",
-                        staticStyle: { width: "200px" },
-                        attrs: { src: review.imgpath }
-                      })
-                    : _vm._e()
-                ])
+                    _c("div", { staticClass: "fill mb-3" }, [
+                      _c("p", { staticClass: "mb-1 font-weight-bold" }, [
+                        _vm._v("レビュー")
+                      ]),
+                      _vm._v(" "),
+                      _c("p", { staticClass: "text mb-0" }, [
+                        _vm._v(_vm._s(review.review))
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    review.imgpath
+                      ? _c("img", {
+                          staticClass: "img img-thumbnail",
+                          staticStyle: { width: "200px" },
+                          attrs: { src: review.imgpath }
+                        })
+                      : _vm._e()
+                  ],
+                  1
+                )
               })
             ],
             2
           )
         : _vm.isActive === 3
         ? _c("article", { staticClass: "favorite" }, [
-            _c("h2", { staticClass: "mb-0" }, [_vm._v("Favorites")])
+            _c("h2", { staticClass: "mb-0" }, [_vm._v("Favorites")]),
+            _vm._v(" "),
+            _c("table", { staticClass: "table table-hover" }, [
+              _vm._m(1),
+              _vm._v(" "),
+              _c(
+                "tbody",
+                _vm._l(_vm.data.likes, function(like, index) {
+                  return _c("tr", { key: index }, [
+                    _c(
+                      "td",
+                      [
+                        _c(
+                          "router-link",
+                          {
+                            attrs: {
+                              to: {
+                                name: "user",
+                                params: { userId: like.user.id }
+                              }
+                            }
+                          },
+                          [
+                            _vm.auth.length !== 0
+                              ? _c(
+                                  "a",
+                                  {
+                                    staticClass:
+                                      "text-dark d-flex align-items-center font-weight-bold mb-0",
+                                    attrs: { href: "" }
+                                  },
+                                  [
+                                    like.user.acount
+                                      ? _c("img", {
+                                          staticClass:
+                                            "cycle img-thumbnail mr-2",
+                                          attrs: {
+                                            src: like.user.acount.icon,
+                                            alt: "ユーザーアイコン"
+                                          }
+                                        })
+                                      : _c("img", {
+                                          staticClass:
+                                            "cycle img-thumbnail mr-2",
+                                          attrs: {
+                                            src:
+                                              "https://tripsupporter.s3-ap-northeast-1.amazonaws.com/none.png",
+                                            alt: "アイコン"
+                                          }
+                                        }),
+                                    _vm._v(
+                                      "\n                  " +
+                                        _vm._s(like.user.name)
+                                    )
+                                  ]
+                                )
+                              : _vm._e()
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _vm.auth.length == 0
+                          ? _c(
+                              "a",
+                              {
+                                staticClass:
+                                  "text-dark d-flex align-items-center font-weight-bold mb-0",
+                                attrs: {
+                                  "data-toggle": "modal",
+                                  "data-target": "#guestModal"
+                                }
+                              },
+                              [
+                                like.user.acount
+                                  ? _c("img", {
+                                      staticClass: "cycle img-thumbnail mr-2",
+                                      attrs: {
+                                        src: like.user.acount.icon,
+                                        alt: "ユーザーアイコン"
+                                      }
+                                    })
+                                  : _c("img", {
+                                      staticClass: "cycle img-thumbnail mr-2",
+                                      attrs: {
+                                        src:
+                                          "https://tripsupporter.s3-ap-northeast-1.amazonaws.com/none.png",
+                                        alt: "アイコン"
+                                      }
+                                    }),
+                                _vm._v(_vm._s(like.user.name))
+                              ]
+                            )
+                          : _vm._e()
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    like.user.acount
+                      ? _c("td", [
+                          _vm._v(
+                            "\n              " +
+                              _vm._s(like.user.acount.gender) +
+                              "\n            "
+                          )
+                        ])
+                      : _c("td", [_vm._v("回答がありません")]),
+                    _vm._v(" "),
+                    like.user.acount
+                      ? _c("td", [_vm._v(_vm._s(like.user.acount.age))])
+                      : _c("td", [_vm._v("回答がありません")]),
+                    _vm._v(" "),
+                    _c("td", [
+                      _vm.auth.length !== 0
+                        ? _c("a", { staticClass: "btn btn-primary" }, [
+                            _vm._v("詳細")
+                          ])
+                        : _c(
+                            "a",
+                            {
+                              staticClass: "btn btn-primary",
+                              attrs: {
+                                "data-toggle": "modal",
+                                "data-target": "#guestModal"
+                              }
+                            },
+                            [_vm._v("詳細")]
+                          )
+                    ])
+                  ])
+                }),
+                0
+              )
+            ]),
+            _vm._v(" "),
+            _vm._m(2)
           ])
         : _vm.isActive === 4
         ? _c("article", { staticClass: "phots" }, [
@@ -65857,6 +66108,34 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("th", [_vm._v("入国制限"), _c("br"), _vm._v("（コロナ）")])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", {}, [
+      _c("tr", [
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("ユーザー")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("性別")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("年齢")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("詳細")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [
+      _c("h5", { staticClass: "mb-5" }, [_vm._v("＊いいねの投稿がありません")]),
+      _vm._v(" "),
+      _c("a", { staticClass: "btn btn-primary", attrs: { type: "button" } }, [
+        _vm._v("お気に入りの国をさがそう！")
+      ])
+    ])
   }
 ]
 render._withStripped = true
@@ -66625,7 +66904,11 @@ var render = function() {
   return _c("div", [
     _c(
       "header",
-      [_c("header-component", { attrs: { auth: _vm.auth, icon: _vm.icon } })],
+      [
+        _c("header-component", {
+          attrs: { auth: _vm.auth, acount: _vm.acount }
+        })
+      ],
       1
     ),
     _vm._v(" "),
