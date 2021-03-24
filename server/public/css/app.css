@@ -10899,8 +10899,16 @@ a.text-dark:focus {
   }
 }
 
+#app {
+  overflow: hidden;
+}
+
 body {
   background-color: #fff !important;
+}
+
+.bg-color {
+  background-color: #FAF0E6 !important;
 }
 
 .star-ratings-sprite {
@@ -11400,27 +11408,37 @@ nav .dropdown-menu {
   vertical-align: middle;
 }
 
-.detail .phots .row {
+.detail .phots hr {
+  margin-bottom: 50px;
+}
+
+.detail .phots #lightgallery {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.detail .phots #lightgallery .row {
   width: 100%;
 }
 
-.detail .phots .bg {
+.detail .phots #lightgallery .row .bg {
   position: relative;
 }
 
-.detail .phots .bg a {
+.detail .phots #lightgallery .row .bg a {
   position: relative;
   width: 100%;
   margin: auto;
 }
 
-.detail .phots .bg a:before {
+.detail .phots #lightgallery .row .bg a:before {
   content: "";
   display: block;
   padding-top: 75%;
 }
 
-.detail .phots .bg a img {
+.detail .phots #lightgallery .row .bg a img {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -11433,10 +11451,10 @@ nav .dropdown-menu {
      object-fit: cover;
 }
 
-.detail .phots .bg .text {
+.detail .phots #lightgallery .row .bg .text {
   display: block;
   font-size: 14px;
-  margin-left: 2.5%;
+  margin-left: 2%;
   margin-bottom: 0;
 }
 

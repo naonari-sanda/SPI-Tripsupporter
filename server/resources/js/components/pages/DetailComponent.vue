@@ -272,8 +272,9 @@
       </article>
 
       <article v-else-if="isActive === 3" class="favorite">
-        <h2 class="mb-0">Favorites</h2>
-        <table class="table table-hover">
+        <h2>Favorites</h2>
+
+        <table v-if="data.reviews" class="table table-hover">
           <thead class="">
             <tr>
               <th scope="col">ユーザー</th>
@@ -335,10 +336,13 @@
               <td v-if="like.user.acount">{{ like.user.acount.age }}</td>
               <td v-else>回答がありません</td>
               <td>
-                <a v-if="auth.length !== 0" class="btn btn-primary">詳細</a>
-
+                <router-link
+                  :to="{ name: 'user', params: { userId: like.user.id } }"
+                >
+                  <a v-if="auth.length !== 0" class="btn btn-primary">詳細</a>
+                </router-link>
                 <a
-                  v-else
+                  v-if="auth.length === 0"
                   data-toggle="modal"
                   data-target="#guestModal"
                   class="btn btn-primary"
@@ -349,7 +353,7 @@
           </tbody>
         </table>
 
-        <div>
+        <div v-else>
           <h5 class="mb-5">＊いいねの投稿がありません</h5>
           <a type="button" class="btn btn-primary"
             >お気に入りの国をさがそう！</a
@@ -428,7 +432,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-tr:nth-child(odd) {
+.profile tr:nth-child(odd) {
   background-color: rgba(0, 0, 0, 0.05);
 }
 </style>
