@@ -2438,6 +2438,36 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -8085,7 +8115,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".profile tr[data-v-fef7bcf4]:nth-child(odd) {\n  background-color: rgba(0, 0, 0, 0.05);\n}", ""]);
+exports.push([module.i, ".profile tr[data-v-fef7bcf4]:nth-child(odd) {\n  background-color: rgba(0, 0, 0, 0.05);\n}\n.row[data-v-fef7bcf4] {\n  width: 100%;\n}\n.row .bg[data-v-fef7bcf4] {\n  position: relative;\n}\n.row .bg a[data-v-fef7bcf4] {\n  position: relative;\n  width: 100%;\n  margin: auto;\n}\n.row .bg a[data-v-fef7bcf4]:before {\n  content: \"\";\n  display: block;\n  padding-top: 75%;\n}\n.row .bg a img[data-v-fef7bcf4] {\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  margin: auto;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.row .bg .text[data-v-fef7bcf4] {\n  display: block;\n  font-size: 14px;\n  margin-left: 2%;\n  margin-bottom: 0;\n}", ""]);
 
 // exports
 
@@ -66138,6 +66168,77 @@ var render = function() {
                   },
                   [_vm._v("画像を投稿しよう！")]
                 )
+              : _vm._e(),
+            _vm._v(" "),
+            _c("hr"),
+            _vm._v(" "),
+            _vm.data.reviews || _vm.data.imgages
+              ? _c("div", { attrs: { id: "lightgallery " } }, [
+                  _c(
+                    "div",
+                    { staticClass: "row" },
+                    [
+                      _vm._l(_vm.data.reviews, function(review, index) {
+                        return _c(
+                          "div",
+                          { key: index, staticClass: "bg col-md-3 col-6 mb-2" },
+                          [
+                            _c(
+                              "a",
+                              {
+                                staticClass: "d-block",
+                                attrs: {
+                                  href: review.imgpath,
+                                  "data-lightbox": "example-1"
+                                }
+                              },
+                              [
+                                _c("img", {
+                                  staticClass: "img img-thumbnail",
+                                  attrs: { src: review.imgpath }
+                                })
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c("p", { staticClass: "text" }, [
+                              _vm._v(_vm._s(review.user.name) + "さんの投稿")
+                            ])
+                          ]
+                        )
+                      }),
+                      _vm._v(" "),
+                      _vm._l(_vm.data.images, function(img, index) {
+                        return _c(
+                          "div",
+                          { key: index, staticClass: "bg col-md-3 col-6 mb-2" },
+                          [
+                            _c(
+                              "a",
+                              {
+                                staticClass: "d-block",
+                                attrs: {
+                                  href: img.imgpath,
+                                  "data-lightbox": "example-1"
+                                }
+                              },
+                              [
+                                _c("img", {
+                                  staticClass: "img img-thumbnail",
+                                  attrs: { src: img.imgpath }
+                                })
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c("p", { staticClass: "text" }, [
+                              _vm._v(_vm._s(img.user.name) + "さんの投稿")
+                            ])
+                          ]
+                        )
+                      })
+                    ],
+                    2
+                  )
+                ])
               : _vm._e()
           ])
         : _vm._e()

@@ -371,6 +371,36 @@
           class="btn btn-danger mb-2"
           >画像を投稿しよう！</a
         >
+        <hr />
+
+        <div v-if="data.reviews || data.imgages" id="lightgallery ">
+          <div class="row">
+            <div
+              v-for="(review, index) in data.reviews"
+              :key="index"
+              class="bg col-md-3 col-6 mb-2"
+            >
+              <a
+                class="d-block"
+                :href="review.imgpath"
+                data-lightbox="example-1"
+              >
+                <img class="img img-thumbnail" :src="review.imgpath" />
+              </a>
+              <p class="text">{{ review.user.name }}さんの投稿</p>
+            </div>
+            <div
+              v-for="(img, index) in data.images"
+              :key="index"
+              class="bg col-md-3 col-6 mb-2"
+            >
+              <a class="d-block" :href="img.imgpath" data-lightbox="example-1">
+                <img class="img img-thumbnail" :src="img.imgpath" />
+              </a>
+              <p class="text">{{ img.user.name }}さんの投稿</p>
+            </div>
+          </div>
+        </div>
       </article>
     </div>
   </div>
@@ -434,5 +464,44 @@ export default {
 <style lang="scss" scoped>
 .profile tr:nth-child(odd) {
   background-color: rgba(0, 0, 0, 0.05);
+}
+
+.row {
+  width: 100%;
+
+  .bg {
+    position: relative;
+
+    a {
+      position: relative;
+      width: 100%;
+      margin: auto;
+
+      &:before {
+        content: "";
+        display: block;
+        padding-top: 75%;
+      }
+
+      img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        object-fit: cover;
+      }
+    }
+
+    .text {
+      display: block;
+      font-size: 14px;
+      margin-left: 2%;
+      margin-bottom: 0;
+    }
+  }
 }
 </style>
