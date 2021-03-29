@@ -15,12 +15,22 @@
           <h6 class="text-light mb-3">{{ data.detail | truncate }}</h6>
 
           <button
+            v-if="auth.length == 0"
             type="button"
             class="btn btn-primary"
             data-toggle="modal"
             data-target="#guestModal"
           >
             レビューを投稿
+          </button>
+          <button
+            v-else
+            type="button"
+            class="btn btn-primary"
+            data-toggle="modal"
+            data-target="#guestModal"
+          >
+            レビューを投稿!
           </button>
         </div>
       </div>

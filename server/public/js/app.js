@@ -2468,6 +2468,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -65430,18 +65440,31 @@ var render = function() {
               _vm._v(_vm._s(_vm._f("truncate")(_vm.data.detail)))
             ]),
             _vm._v(" "),
-            _c(
-              "button",
-              {
-                staticClass: "btn btn-primary",
-                attrs: {
-                  type: "button",
-                  "data-toggle": "modal",
-                  "data-target": "#guestModal"
-                }
-              },
-              [_vm._v("\n          レビューを投稿\n        ")]
-            )
+            _vm.auth.length == 0
+              ? _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-primary",
+                    attrs: {
+                      type: "button",
+                      "data-toggle": "modal",
+                      "data-target": "#guestModal"
+                    }
+                  },
+                  [_vm._v("\n          レビューを投稿\n        ")]
+                )
+              : _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-primary",
+                    attrs: {
+                      type: "button",
+                      "data-toggle": "modal",
+                      "data-target": "#guestModal"
+                    }
+                  },
+                  [_vm._v("\n          レビューを投稿!\n        ")]
+                )
           ])
         ])
       ]
